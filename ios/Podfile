@@ -1,0 +1,7 @@
+pod 'Firebase/Analytics'
+
+platform :ios, '10.0'
+
+target 'Runner' do
+  use_frameworks!
+end
