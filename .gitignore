@@ -40,5 +40,9 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-GoogleService-Info.plist
+# Firebase
 google-services.json
+GoogleService-Info.plist
+
+# Environment
+lib/environment/
