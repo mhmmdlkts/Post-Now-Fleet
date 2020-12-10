@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                         headline6: TextStyle(
                             color: Colors.white
                         )
-                    )
+                    ),
                 ),
                 home: AuthService().handleAuth(snapshot.connectionState)
             );

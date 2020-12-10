@@ -1,0 +1,52 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:post_now_fleet/models/driver.dart';
+import 'package:http/http.dart' as http;
+import 'package:post_now_fleet/environment/global_variables.dart';
+
+class RegisterNewDriverService {
+  final FirebaseStorage _storage = FirebaseStorage(storageBucket: 'gs://post-now-f3c53.appspot.com');
+
+  Future<bool> registerDriver (
+    String fleetId,
+    String name,
+    String surname,
+    String email,
+    String phone,
+    File profilePhoto,
+    File criminalRecord,
+    File identityCardFront,
+    File identityCardBack,
+  ) async {
+    Driver newDriver = Driver(fleetId: fleetId, name: name, surname: surname, email: email, phone: phone);
+
+    String url = Uri.encodeFull('${FIREBASE_URL}registerDriverPart1?driver=${json.encode(newDriver.toJson())}&uid=$fleetId');
+    http.Response response = await http.get(url);
+    if (response.statusCode != 200)
+      throw('Status code: ' + response.statusCode.toString());
+    dynamic result = json.decode(response.body);
+    if (result["error"] != null && result["key"] == null)
+      return false;
+
+    String ppUrl = await _startUpload(profilePhoto, result["key"], 'profil', getDownloadUrl: true);
+    newDriver.image = ppUrl;
+    await FirebaseDatabase.instance.reference().child('drivers').child(result["key"]).set(newDriver.toJson()).catchError((onError) => print(onError));
+
+    _startUpload(criminalRecord, result["key"], 'criminal_record');
+    _startUpload(identityCardFront, result["key"], 'identity_card_front');
+    _startUpload(identityCardBack, result["key"], 'identity_card_back');
+    return true;
+  }
+
+  Future<String> _startUpload(File file, String driverId, String filename, {bool getDownloadUrl = false}) async {
+
+    assert(file != null);
+    final dbImagePath = 'drivers_doc/$driverId/$filename.${file.path.split('.').last}';
+    final _uploadTask = await (_storage.ref().child(dbImagePath).putFile(file)).catchError((onError) => print(onError.toString() + "   " + dbImagePath));
+    if (getDownloadUrl)
+      return await _uploadTask.ref.getDownloadURL();
+    return null;
+  }
+}
