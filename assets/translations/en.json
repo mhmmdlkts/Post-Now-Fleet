@@ -137,6 +137,7 @@
     "TITLE": "Order History",
     "TH_WEEK": "{week}. Week",
     "TOTAL_TRIP_COUNT": "Total number of trips",
+    "TOTAL_ONLINE_TIME": "Online time (max {max})",
     "TOTAL_DRIVE_TIME": "Total travel time",
     "SINGLE_ITEM": {
       "DRIVER_CANCELED": "The deliverer has canceled.",

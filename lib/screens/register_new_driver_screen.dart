@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:post_now_fleet/models/fleet.dart';
+import 'package:post_now_fleet/services/all_drivers_service.dart';
 import 'package:post_now_fleet/services/register_new_river_service.dart';
 import 'package:post_now_fleet/widgets/custom_button1.dart';
 import 'package:file_picker/file_picker.dart';
@@ -215,6 +216,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               isActive: _isFormCompleted(),
               onTap: () {
                 setState(() {
+                  _errorMessage = "";
                   _isButtonActive = false;
                 });
                 RegisterNewDriverService().registerDriver(
@@ -227,16 +229,16 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                   _criminalRecord,
                   _identityCardFront,
                   _identityCardBack
-                ).then((value) {
+                ).then((value) async {
                   print(value);
-                  if (!(value??false)) {
+                  if (value == null) {
                     setState(() {
                       _errorMessage = "Kayit sirasinda hata cikti.";
                       _isButtonActive = false;
                     });
                     return;
                   }
-                  Navigator.pop(context);
+                  Navigator.pop(context, value);
                 });
               },
               margin: 0,

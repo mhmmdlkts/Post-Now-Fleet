@@ -12,7 +12,7 @@ class Fleet {
   GlobalSettings settings;
   bool isActive;
 
-  Fleet({this.key, this.name, this.phone, this.email, this.token, this.address, this.settings}) {
+  Fleet({this.key, this.name, this.isActive, this.phone, this.email, this.token, this.address, this.settings}) {
     settings = GlobalSettings();
   }
 

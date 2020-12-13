@@ -5,6 +5,11 @@ import 'package:post_now_fleet/enums/permission_typ_enum.dart';
 import 'package:post_now_fleet/models/fleet.dart';
 import 'package:post_now_fleet/screens/splash_screen.dart';
 import 'package:post_now_fleet/screens/tabs/drivers_list_tab.dart';
+import 'package:post_now_fleet/screens/tabs/total_statistic_tab.dart';
+import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
+import 'package:post_now_fleet/services/all_drivers_service.dart';
+import 'package:post_now_fleet/services/first_screen_service.dart';
+import 'package:post_now_fleet/services/overview_service.dart';
 import 'package:post_now_fleet/services/permission_service.dart';
 import 'package:screen/screen.dart';
 import 'dart:math';
@@ -41,15 +46,20 @@ class _MainScreenState extends State<MainScreen> {
   bool _isInitDone = false;
   int _initCount = 0;
   int _initDone = 0;
-  int _tabBarIndex = 0;
+  int _tabBarIndex = 1;
   Position _myPosition;
 
   @override
   void initState() {
     super.initState();
     Screen.keepOn(true);
+
     _initCount++;
-    Future.delayed(Duration(milliseconds: 200), () => _nextInitializeDone("1"));
+    AllDriverService.initList(widget.myFleet.key).then((value) => _nextInitializeDone("1"));
+    AllDriversStatisticsService.currentDate = OverviewService.getCurrentChildKey();
+
+    _initCount++;
+    AllDriversStatisticsService.getDriversMap(widget.myFleet.key).then((value) => _nextInitializeDone("2"));
   }
   @override
   Widget build(BuildContext context) {
@@ -138,7 +148,7 @@ class _MainScreenState extends State<MainScreen> {
       case 0:
         return DriversListTab(widget.myFleet);
       case 1:
-        return Container(color: Colors.green,);
+        return TotalStatisticTab(widget.myFleet);
       case 2:
         return Container(color: Colors.indigo,);
     }
