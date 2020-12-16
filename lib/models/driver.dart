@@ -17,6 +17,7 @@ class Driver implements Comparable{
   String phone;
   String image;
   String fleetId;
+  List<String> jobQueue = [];
   GlobalSettings settings;
 
   Driver({this.name, this.surname, this.email, this.phone, this.isOnline, this.lat, this.long, this.image, this.fleetId, this.token}) {
@@ -36,6 +37,7 @@ class Driver implements Comparable{
     phone = snapshot.value["phone"];
     image = snapshot.value["image"];
     fleetId = snapshot.value["fleetId"];
+    jobQueue.addAll(List<String>.from(snapshot.value["jobQueue"]??[]));
     if (snapshot.value["settings"] != null)
       settings = GlobalSettings.fromJson(snapshot.value["settings"]);
   }
@@ -76,6 +78,8 @@ class Driver implements Comparable{
     else
       return -1;
   }
+
+  bool isOnJob() => jobQueue.isNotEmpty;
 
   LatLng getLatLng() => LatLng(lat, long);
 }

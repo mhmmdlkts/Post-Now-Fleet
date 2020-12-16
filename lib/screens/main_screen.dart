@@ -1,33 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:post_now_fleet/enums/permission_typ_enum.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:post_now_fleet/models/fleet.dart';
 import 'package:post_now_fleet/screens/splash_screen.dart';
 import 'package:post_now_fleet/screens/tabs/drivers_list_tab.dart';
+import 'package:post_now_fleet/screens/tabs/maps_view_tab.dart';
 import 'package:post_now_fleet/screens/tabs/total_statistic_tab.dart';
 import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
 import 'package:post_now_fleet/services/all_drivers_service.dart';
-import 'package:post_now_fleet/services/first_screen_service.dart';
+import 'package:post_now_fleet/services/main_screen_service.dart';
 import 'package:post_now_fleet/services/overview_service.dart';
-import 'package:post_now_fleet/services/permission_service.dart';
 import 'package:screen/screen.dart';
-import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_google_places/flutter_google_places.dart';
-import 'package:google_map_polyline/google_map_polyline.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:google_maps_webservice/places.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:screen/screen.dart';
 import 'dart:io' show Platform;
 
 
@@ -42,20 +26,36 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
 
+  BitmapDescriptor _driverLocationIcon, _driverLocationIconOnJob;
   bool _isInitialized = false;
   bool _isInitDone = false;
   int _initCount = 0;
   int _initDone = 0;
-  int _tabBarIndex = 1;
-  Position _myPosition;
+  int _tabBarIndex = 2;
 
   @override
   void initState() {
     super.initState();
     Screen.keepOn(true);
 
+    final markerSize = Platform.isIOS?130:80;
+
     _initCount++;
-    AllDriverService.initList(widget.myFleet.key).then((value) => _nextInitializeDone("1"));
+    MainScreenService.getBytesFromAsset('assets/driver_map_marker_grey.png', (markerSize*1.15).round()).then((value) => { setState((){
+      _driverLocationIcon = BitmapDescriptor.fromBytes(value);
+      _nextInitializeDone('3');
+    })});
+
+    _initCount++;
+    MainScreenService.getBytesFromAsset('assets/driver_map_marker.png', (markerSize*1.15).round()).then((value) => { setState((){
+      _driverLocationIconOnJob = BitmapDescriptor.fromBytes(value);
+      _nextInitializeDone('4');
+    })});
+
+    _initCount++;
+    AllDriverService.initList(widget.myFleet.key, (val) => setState((){
+      _initCount += val;
+    }), () => _nextInitializeDone('5')).then((value) => _nextInitializeDone("1"));
     AllDriversStatisticsService.currentDate = OverviewService.getCurrentChildKey();
 
     _initCount++;
@@ -87,7 +87,7 @@ class _MainScreenState extends State<MainScreen> {
             body: _getBody(),
           ),
         ),
-        _isInitialized ? Container() : SplashScreen(),
+        _isInitialized ? Container() : SplashScreen(totalTask: _initCount, completedTask: _initDone,),
       ],
     );
   }
@@ -104,43 +104,10 @@ class _MainScreenState extends State<MainScreen> {
     if (_isInitDone)
       return false;
     _isInitDone = true;
-    _initMyPosition().then((val) => {
-      Future.delayed(Duration(milliseconds: 400), () =>
-          setState((){
-            _isInitialized = true;
-          })
-      )
+    setState((){
+      _isInitialized = true;
     });
     return true;
-  }
-
-  void _setMyPosition(Position pos) {
-    //_placesService = PlacesService(pos);
-    _myPosition = pos;
-  }
-
-  void _onPositionChanged(Position position) {
-    _setMyPosition(position);
-  }
-
-  Future<void> _initMyPosition() async {
-    return;
-    if (await PermissionService.positionIsNotGranted(context, PermissionTypEnum.LOCATION))
-      return null;
-
-    const locationOptions = LocationOptions(accuracy: LocationAccuracy.high, distanceFilter: 10);
-
-    Geolocator().getPositionStream(locationOptions).listen(_onPositionChanged);
-
-    _setMyPosition(await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.low));
-
-    Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high).then((value) => {
-      _myPosition = value,
-    });
-
-    /*await _mapController.moveCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(target: LatLng(_myPosition.latitude, _myPosition.longitude), zoom: 13)
-    ));*/
   }
 
   Widget _getBody() {
@@ -150,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
       case 1:
         return TotalStatisticTab(widget.myFleet);
       case 2:
-        return Container(color: Colors.indigo,);
+        return MapsViewTab(widget.myFleet, _driverLocationIcon, _driverLocationIconOnJob);
     }
     return Container();
   }

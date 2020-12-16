@@ -14,7 +14,7 @@ class AllDriversStatisticsService {
     Map<String, DriverStatistics> newValue = Map();
     DataSnapshot result = await FirebaseDatabase.instance.reference().child('fleets').child(fleetId).child("statistics").child(date).once();
 
-    result.value.forEach((key,val) {
+    result?.value?.forEach((key,val) {
       newValue[key] = DriverStatistics.fromJson(key, val);
     });
 

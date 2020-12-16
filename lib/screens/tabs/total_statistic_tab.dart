@@ -83,13 +83,27 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
           child: Column(
             children: [
               _getInfo("Netto-Fahrpreis", _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
-              _getInfo("Pro Fahrt", (_driverStatisticsService.getTotalIncome(day: _chosenDay)/_driverStatisticsService.getTotalTripCount(day: _chosenDay)).toStringAsFixed(2)+ " €", _textStyle),
-              _getInfo("Pro Stunde bei Fahrt", (_driverStatisticsService.getTotalIncome(day: _chosenDay)/(_driverStatisticsService.getTotalOnlineDuration(day: _chosenDay).inMinutes/60)).toStringAsFixed(2)+ " €", _textStyle),
+              _getInfo("Pro Fahrt", _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
+              _getInfo("Pro Stunde bei Fahrt", _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
             ],
           ),
         )
       ],
     );
+  }
+
+  double _getProDriveIncome() {
+    final double income = _driverStatisticsService.getTotalIncome(day: _chosenDay)/_driverStatisticsService.getTotalTripCount(day: _chosenDay);
+    if (income.isNaN)
+      return 0.0;
+    return income;
+  }
+
+  double _getProHourIncome() {
+    final double income = _driverStatisticsService.getTotalIncome(day: _chosenDay)/(_driverStatisticsService.getTotalOnlineDuration(day: _chosenDay).inMinutes/60);
+    if (income.isNaN)
+      return 0.0;
+    return income;
   }
 
   _initDrivers({String date}) {
