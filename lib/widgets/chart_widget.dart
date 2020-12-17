@@ -36,8 +36,8 @@ class _ChartWidgetState extends State<ChartWidget> {
   @override
   void initState() {
     super.initState();
-    if(!widget._weeklyIncome.isInitialized)
-      refreshState();
+    //if(!widget._weeklyIncome.isInitialized)
+    refreshState();
   }
 
   @override

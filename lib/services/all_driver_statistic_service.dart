@@ -1,4 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'driver_statistics_service.dart';
 
@@ -6,19 +7,21 @@ class AllDriversStatisticsService {
   static final Map<String, Map<String, DriverStatistics>> statistics = Map();
   static String currentDate;
 
-  static Future<Map<String, DriverStatistics>> getDriversMap(String fleetId, {String date}) async {
-    if (date == null)
+  static Map<String, DriverStatistics> getDriversMap(String fleetId, VoidCallback setState, {String date}) {
+    if (date.toString().contains(null.toString()))
       date = currentDate;
     if (statistics.containsKey(date))
       return statistics[date];
     Map<String, DriverStatistics> newValue = Map();
-    DataSnapshot result = await FirebaseDatabase.instance.reference().child('fleets').child(fleetId).child("statistics").child(date).once();
+    FirebaseDatabase.instance.reference().child('fleets').child(fleetId).child("statistics").child(date).once().then((value) {
+      value?.value?.forEach((key,val) {
+        newValue[key] = DriverStatistics.fromJson(key, val);
+      });
 
-    result?.value?.forEach((key,val) {
-      newValue[key] = DriverStatistics.fromJson(key, val);
+      statistics[date] = newValue;
+      setState.call();
     });
 
-    statistics[date] = newValue;
     return newValue;
   }
 }

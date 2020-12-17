@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
   bool _isInitDone = false;
   int _initCount = 0;
   int _initDone = 0;
-  int _tabBarIndex = 2;
+  int _tabBarIndex = 1;
 
   @override
   void initState() {
@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
     AllDriversStatisticsService.currentDate = OverviewService.getCurrentChildKey();
 
     _initCount++;
-    AllDriversStatisticsService.getDriversMap(widget.myFleet.key).then((value) => _nextInitializeDone("2"));
+    AllDriversStatisticsService.getDriversMap(widget.myFleet.key, () => _nextInitializeDone("2"));
   }
   @override
   Widget build(BuildContext context) {

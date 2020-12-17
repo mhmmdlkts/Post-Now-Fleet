@@ -46,6 +46,10 @@ class DriverStatisticsService {
     return _totalTrip;
   }
 
+  int getTotalWorkedDrivers({int day = -1}) {
+    return _statistics.where((element) => element.getTripCount(day: day) > 0).length;
+  }
+
   Duration getTotalOnlineDuration({int day = -1}) {
     if (_totalTime != null && day == -1)
       return _totalTime;
