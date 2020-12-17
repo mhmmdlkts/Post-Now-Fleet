@@ -6,6 +6,7 @@ import 'package:post_now_fleet/services/driver_statitics_service.dart';
 import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
 import 'package:post_now_fleet/services/driver_statistics_service.dart';
 import 'package:post_now_fleet/services/overview_service.dart';
+import 'package:post_now_fleet/services/week_year_to_readable_date_interval.dart';
 import 'package:post_now_fleet/widgets/chart_widget.dart';
 
 class TotalStatisticTab extends StatefulWidget {
@@ -40,6 +41,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
     _pageController = PageController(initialPage: _getPageIndex());
 
     _initOverview();
+    WeekYearToReadableDateInterval.init().then((value) => setState((){}));
   }
 
   @override
@@ -82,6 +84,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
       ChartWidget(
           _driverStatisticsService.getWeeklyIncome(),
           int.parse(_shownDate.split("-").last),
+          int.parse(_shownDate.split("-").first),
           (val) => setState((){
             _chosenDay = val;
             //print(val?.getIncome()?.toStringAsFixed(2)??"");

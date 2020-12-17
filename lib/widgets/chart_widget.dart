@@ -6,6 +6,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:post_now_fleet/models/daily_income.dart';
 import 'package:post_now_fleet/models/weekly_income.dart';
+import 'package:post_now_fleet/services/week_year_to_readable_date_interval.dart';
 
 class ChartWidget extends StatefulWidget {
   final List<Color> availableColors = [
@@ -20,8 +21,9 @@ class ChartWidget extends StatefulWidget {
   final WeeklyIncome _weeklyIncome;
   final ValueChanged<int> func;
   final int week;
+  final int year;
 
-  ChartWidget(this._weeklyIncome, this.week, this.func);
+  ChartWidget(this._weeklyIncome, this.week,  this.year, this.func);
 
 
   @override
@@ -37,6 +39,7 @@ class _ChartWidgetState extends State<ChartWidget> {
   void initState() {
     super.initState();
     //if(!widget._weeklyIncome.isInitialized)
+    WeekYearToReadableDateInterval.init().then((value) => setState((){}));
     refreshState();
   }
 
@@ -55,7 +58,7 @@ class _ChartWidgetState extends State<ChartWidget> {
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Text(
-                touchedIndex==-1?'OVERVIEW.TH_WEEK'.tr(namedArgs: {'week': widget.week.toString()}):widget._weeklyIncome.dailyIncomes[touchedIndex].getDayName(),
+                _getDate(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
@@ -194,4 +197,14 @@ class _ChartWidgetState extends State<ChartWidget> {
   }
 
   Color randomColor() => widget.availableColors[Random().nextInt(widget.availableColors.length)];
+
+  String _getDate() {
+    String dateInterval = WeekYearToReadableDateInterval.getReadable(year: widget.year, week: widget.week);
+    if (touchedIndex != -1) {
+      return widget._weeklyIncome.dailyIncomes[touchedIndex].getDayName();
+    }
+    if (dateInterval == null)
+      return 'OVERVIEW.TH_WEEK'.tr(namedArgs: {'week': widget.week.toString()});
+    return dateInterval;
+  }
 }

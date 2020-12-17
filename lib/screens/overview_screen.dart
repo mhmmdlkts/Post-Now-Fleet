@@ -75,7 +75,7 @@ class _OverviewScreen extends State<OverviewScreen> {
     shrinkWrap: true,
     padding: EdgeInsets.only(left: 8, right: 8, top: 10),
     children: [
-      ChartWidget(_overviewService.weeklyIncome, _chosenWeek, (val) {
+      ChartWidget(_overviewService.weeklyIncome, _chosenWeek,2020, (val) {
         setState(() {
           //_selectedIncome = val;
         });
