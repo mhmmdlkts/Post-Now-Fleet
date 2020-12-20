@@ -13,6 +13,8 @@ import 'package:post_now_fleet/services/overview_service.dart';
 import 'package:screen/screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'dart:io' show Platform;
+import 'package:intl/date_symbol_data_local.dart';
+
 
 
 class MainScreen extends StatefulWidget {
@@ -51,6 +53,11 @@ class _MainScreenState extends State<MainScreen> {
       _driverLocationIconOnJob = BitmapDescriptor.fromBytes(value);
       _nextInitializeDone('4');
     })});
+
+    _initCount++;
+    initializeDateFormatting().then((value) => {
+      _nextInitializeDone('0.0'),
+    });
 
     _initCount++;
     AllDriverService.initList(widget.myFleet.key, (val) => setState((){

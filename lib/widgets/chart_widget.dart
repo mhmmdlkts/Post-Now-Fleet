@@ -199,12 +199,9 @@ class _ChartWidgetState extends State<ChartWidget> {
   Color randomColor() => widget.availableColors[Random().nextInt(widget.availableColors.length)];
 
   String _getDate() {
-    String dateInterval = WeekYearToReadableDateInterval.getReadable(year: widget.year, week: widget.week);
     if (touchedIndex != -1) {
       return widget._weeklyIncome.dailyIncomes[touchedIndex].getDayName();
     }
-    if (dateInterval == null)
-      return 'OVERVIEW.TH_WEEK'.tr(namedArgs: {'week': widget.week.toString()});
-    return dateInterval;
+    return WeekYearToReadableDateInterval.getReadable(year: widget.year, week: widget.week);;
   }
 }

@@ -15,7 +15,7 @@ class WeekYearToReadableDateInterval {
   }
 
   static String getReadable({int year, int week}) {
-    String nullReturn;
+    String nullReturn = 'OVERVIEW.TH_WEEK'.tr(namedArgs: {'week': week.toString()});
     if (year == null && year == null)
       return nullReturn;
 

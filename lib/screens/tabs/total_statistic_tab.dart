@@ -9,6 +9,8 @@ import 'package:post_now_fleet/services/overview_service.dart';
 import 'package:post_now_fleet/services/week_year_to_readable_date_interval.dart';
 import 'package:post_now_fleet/widgets/chart_widget.dart';
 
+import '../all_drivers_statistic_screen.dart';
+
 class TotalStatisticTab extends StatefulWidget {
   final Fleet myFleet;
   TotalStatisticTab(this.myFleet);
@@ -98,14 +100,17 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
       Row(
         children: [
           getInfoCard( _driverStatisticsService.getTotalTripCount(day: _chosenDay).toString(), "OVERVIEW.TOTAL_TRIP_COUNT".tr()),
-          getInfoCard( _driverStatisticsService.getTotalWorkedDrivers(day: _chosenDay).toString(), "OVERVIEW.TOTAL_WORKED_DRIVER_COUNT".tr()),
+          getInfoCard( _driverStatisticsService.getTotalWorkedDrivers(day: _chosenDay).toString(), "OVERVIEW.TOTAL_WORKED_DRIVER_COUNT".tr(), onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AllDriversStatisticScreen(_shownDate)));
+          }),
         ],
       ),
       Container(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           children: [
-            _getInfo("Netto-Fahrpreis", _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
+            _getInfo("OVERVIEW.NET_INCOME".tr(), _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
             _getInfo("Pro Fahrt", _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
             _getInfo("Pro Stunde bei Fahrt", _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
           ],
@@ -131,21 +136,25 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
     return a;
   }
 
-  Widget getInfoCard(String val, String explain) => Flexible(
+  Widget getInfoCard(String val, String explain, {VoidCallback onTap}) => Flexible(
     flex: 1,
     child: Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       color: Colors.lightBlue,
-      child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Center(
-            child: Column(
-              children: [
-                Text(val, style: TextStyle(fontSize: 36, color: Colors.white), textAlign: TextAlign.center),
-                Text(explain, style: TextStyle(fontSize: 16, color: Colors.white), textAlign: TextAlign.center),
-              ],
-            ),
-          )
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(18),
+        child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Center(
+              child: Column(
+                children: [
+                  Text(val, style: TextStyle(fontSize: 36, color: Colors.white), textAlign: TextAlign.center),
+                  Text(explain, style: TextStyle(fontSize: 16, color: Colors.white), textAlign: TextAlign.center),
+                ],
+              ),
+            )
+        ),
       )
     ),
   );

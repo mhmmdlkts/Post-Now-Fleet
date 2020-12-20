@@ -153,6 +153,7 @@
     "TOTAL_TRIP_COUNT": "Total number of trips",
     "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
     "TOTAL_ONLINE_TIME": "Online time (max {max})",
+    "NET_INCOME": "Netto-Fahrpreis",
     "TOTAL_DRIVE_TIME": "Total travel time",
     "SINGLE_ITEM": {
       "DRIVER_CANCELED": "The deliverer has canceled.",
