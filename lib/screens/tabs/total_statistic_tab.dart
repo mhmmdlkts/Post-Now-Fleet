@@ -166,7 +166,6 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
 
   _initDrivers({String date}) {
     final value = AllDriversStatisticsService.getDriversMap(widget.myFleet.key, () => setState((){
-      print(date);
       _initDrivers(date: date);
     }), date: date);
     _driverStatisticsService = DriverStatisticsService();

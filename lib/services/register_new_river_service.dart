@@ -30,7 +30,7 @@ class RegisterNewDriverService {
     if (result["error"] != null && result["key"] == null)
       return null;
 
-    String ppUrl = await _startUpload(profilePhoto, result["key"], 'profil', getDownloadUrl: true);
+    String ppUrl = await _startUpload(profilePhoto, result["key"], 'profile', getDownloadUrl: true, extension: "png");
     newDriver.image = ppUrl;
     await FirebaseDatabase.instance.reference().child('drivers').child(result["key"]).set(newDriver.toJson()).catchError((onError) => print(onError));
 
@@ -45,10 +45,10 @@ class RegisterNewDriverService {
     return result["key"];
   }
 
-  Future<String> _startUpload(File file, String driverId, String filename, {bool getDownloadUrl = false}) async {
-
+  Future<String> _startUpload(File file, String driverId, String filename, {bool getDownloadUrl = false, String extension}) async {
     assert(file != null);
-    final dbImagePath = 'drivers_doc/$driverId/$filename.${file.path.split('.').last}';
+    if (extension == null) extension = file.path.split('.').last;
+    final dbImagePath = 'drivers_doc/$driverId/$filename.$extension';
     final _uploadTask = await (_storage.ref().child(dbImagePath).putFile(file)).catchError((onError) => print(onError.toString() + "   " + dbImagePath));
     if (getDownloadUrl)
       return await _uploadTask.ref.getDownloadURL();

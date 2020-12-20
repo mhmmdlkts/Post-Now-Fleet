@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:post_now_fleet/models/fleet.dart';
 import 'package:post_now_fleet/services/all_drivers_service.dart';
 import 'package:post_now_fleet/services/register_new_river_service.dart';
@@ -115,9 +116,16 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 );
                 if (result == null)
                   return;
-                _profilePhoto = File(result.paths.first);
+                _profilePhoto = await ImageCropper.cropImage(
+                  sourcePath: result.paths.first,
+                  aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+                  compressFormat: ImageCompressFormat.png,
+                  cropStyle: CropStyle.circle,
+                );
+                if (_profilePhoto == null)
+                  return;
                 setState(() {
-                  _profilePhotoController.text = result.names.first;
+                  _profilePhotoController.text = _profilePhoto.path.split("/").last;
                 });
               },
               readOnly: true,
@@ -171,7 +179,6 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 setState(() {
                   _identityCardFrontController.text = result.names.first;
                 });
-                print(result.names.first);
               },
               readOnly: true,
               textInputAction: TextInputAction.done,
@@ -230,7 +237,6 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                   _identityCardFront,
                   _identityCardBack
                 ).then((value) async {
-                  print(value);
                   if (value == null) {
                     setState(() {
                       _errorMessage = "Kayit sirasinda hata cikti.";
