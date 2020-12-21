@@ -82,4 +82,6 @@ class Driver implements Comparable{
   bool isOnJob() => jobQueue.isNotEmpty;
 
   LatLng getLatLng() => LatLng(lat, long);
+
+  bool isActive() => active??false;
 }

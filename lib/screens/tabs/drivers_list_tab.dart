@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:post_now_fleet/models/driver.dart';
 import 'package:post_now_fleet/models/fleet.dart';
+import 'package:post_now_fleet/screens/edit_driver_screen.dart';
 import 'package:post_now_fleet/services/all_drivers_service.dart';
 import 'package:post_now_fleet/widgets/custom_button1.dart';
 
@@ -48,8 +49,9 @@ class _DriversListTabState extends State<DriversListTab> {
   }
 
   Widget _singleDriverWidget(Driver driver) => InkWell(
-    onTap: () {
-
+    onTap: () async{
+      await Navigator.push(context, MaterialPageRoute(builder: (context) => EditDriverScreen(driver)));
+      setState(() {});
     },
     child: Container(
       padding: EdgeInsets.all(10),
@@ -66,7 +68,7 @@ class _DriversListTabState extends State<DriversListTab> {
                   Text('${driver.name} ${driver.surname}', style: TextStyle(fontSize: 18),),
                 ],
               ),
-              _getOnlinePoint(driver.isOnline)
+              _getOnlinePoint(driver.isOnline, driver.isActive())
             ],
           ),
         ],
@@ -85,12 +87,12 @@ class _DriversListTabState extends State<DriversListTab> {
     );
   }
 
-  _getOnlinePoint(bool isOnline) => Container(
+  _getOnlinePoint(bool isOnline, bool isActive) => Container(
     margin: EdgeInsets.symmetric(horizontal: 20),
     width: 10,
     height: 10,
     decoration: BoxDecoration(
-      color: (isOnline??false)?Colors.green:Colors.redAccent,
+      color: isActive?((isOnline??false)?Colors.green:Colors.redAccent):Colors.black,
       borderRadius: BorderRadius.all(Radius.circular(10))
     ),
   );
