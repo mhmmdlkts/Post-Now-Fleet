@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:post_now_fleet/environment/global_variables.dart';
 
 class RegisterNewDriverService {
-  final FirebaseStorage _storage = FirebaseStorage(storageBucket: 'gs://post-now-f3c53.appspot.com');
+  final FirebaseStorage _storage = FirebaseStorage(storageBucket: 'gs://${FIREBASE_NAME}.appspot.com');
 
   Future<String> registerDriver (
     String fleetId,
@@ -24,13 +24,14 @@ class RegisterNewDriverService {
 
     String url = Uri.encodeFull('${FIREBASE_URL}registerDriverPart1?driver=${json.encode(newDriver.toJson())}&uid=$fleetId');
     http.Response response = await http.get(url);
+    print(response);
     if (response.statusCode != 200)
       throw('Status code: ' + response.statusCode.toString());
     dynamic result = json.decode(response.body);
     if (result["error"] != null && result["key"] == null)
       return null;
 
-    String ppUrl = await _startUpload(profilePhoto, result["key"], 'profile', getDownloadUrl: true, extension: "png");
+    String ppUrl = await _startUpload(profilePhoto, result["key"], 'profile', getDownloadUrl: true, extension: "jpg");
     newDriver.image = ppUrl;
     await FirebaseDatabase.instance.reference().child('drivers').child(result["key"]).set(newDriver.toJson()).catchError((onError) => print(onError));
 

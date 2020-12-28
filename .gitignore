@@ -46,3 +46,4 @@ GoogleService-Info.plist
 
 # Environment
 lib/environment/
+iOS/Runner/Config.swift

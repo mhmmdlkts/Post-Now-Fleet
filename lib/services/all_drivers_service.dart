@@ -9,7 +9,7 @@ class AllDriverService {
     DataSnapshot result = await FirebaseDatabase.instance.reference().child('fleets').child(fleetId).child("drivers").once();
     List<Future<void>> list = List();
     totFunc.call(list.length);
-    result.value.forEach((e) => list.add(fetchAndAddDriver(e, doneFunc: doneFunc)));
+    result.value?.forEach((e) => list.add(fetchAndAddDriver(e, doneFunc: doneFunc)));
     await Future.wait(list).catchError((onError) => print(onError));
   }
 

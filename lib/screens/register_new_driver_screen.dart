@@ -119,7 +119,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 _profilePhoto = await ImageCropper.cropImage(
                   sourcePath: result.paths.first,
                   aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
-                  compressFormat: ImageCompressFormat.png,
+                  compressFormat: ImageCompressFormat.jpg,
                   cropStyle: CropStyle.circle,
                 );
                 if (_profilePhoto == null)
