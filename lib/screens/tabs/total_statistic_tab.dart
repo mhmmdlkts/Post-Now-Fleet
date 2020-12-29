@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:post_now_fleet/models/fleet.dart';
-import 'package:post_now_fleet/models/income_element.dart';
 import 'package:post_now_fleet/services/driver_statitics_service.dart';
 import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
 import 'package:post_now_fleet/services/driver_statistics_service.dart';
@@ -74,13 +73,6 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
     setState(() { });
   }
 
-  setInitialized(bool isInitialized) {
-    setState(() {
-      return;
-      _overviewService.weeklyIncome.isInitialized = isInitialized;
-    });
-  }
-
   Widget _getContent() => ListView(
     children: [
       ChartWidget(
@@ -94,13 +86,13 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
       )),
       Row(
         children: [
-          getInfoCard( _getTotalOnlineTime(), "OVERVIEW.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': (24 * (_chosenDay==-1?7:1)).toString()}) )
+          getInfoCard( _getTotalOnlineTime(), "MAIN_SCREEN.TABS.STATISTICS.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': (24 * (_chosenDay==-1?7:1)).toString()}) )
         ],
       ),
       Row(
         children: [
-          getInfoCard( _driverStatisticsService.getTotalTripCount(day: _chosenDay).toString(), "OVERVIEW.TOTAL_TRIP_COUNT".tr()),
-          getInfoCard( _driverStatisticsService.getTotalWorkedDrivers(day: _chosenDay).toString(), "OVERVIEW.TOTAL_WORKED_DRIVER_COUNT".tr(), onTap: () {
+          getInfoCard( _driverStatisticsService.getTotalTripCount(day: _chosenDay).toString(), "MAIN_SCREEN.TABS.STATISTICS.TOTAL_TRIP_COUNT".tr()),
+          getInfoCard( _driverStatisticsService.getTotalWorkedDrivers(day: _chosenDay).toString(), "MAIN_SCREEN.TABS.STATISTICS.TOTAL_WORKED_DRIVER_COUNT".tr(), onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AllDriversStatisticScreen(_shownDate)));
           }),
@@ -110,9 +102,9 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: Column(
           children: [
-            _getInfo("OVERVIEW.NET_INCOME".tr(), _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
-            _getInfo("Pro Fahrt", _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
-            _getInfo("Pro Stunde bei Fahrt", _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
+            _getInfo("MAIN_SCREEN.TABS.STATISTICS.NET_INCOME".tr(), _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
+            _getInfo("MAIN_SCREEN.TABS.STATISTICS.INCOME_PRO_JOB", _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
+            _getInfo("MAIN_SCREEN.TABS.STATISTICS_INCOME_PRO_HOUR".tr(), _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
           ],
         ),
       )

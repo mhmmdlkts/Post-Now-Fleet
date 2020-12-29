@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:post_now_fleet/models/driver.dart';
@@ -33,7 +34,7 @@ class _DriversListTabState extends State<DriversListTab> {
                 setState(() {
                 });
               },
-              text: "Register New Driver",
+              text: "MAIN_SCREEN.TABS.DRIVERS.REGISTER_DRIVERS".tr(),
               icon: Icons.add
             ),
             ListView.separated(

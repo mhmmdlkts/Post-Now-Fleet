@@ -41,11 +41,11 @@ class _EditDriverScreenState extends State<EditDriverScreen> {
             ],
           ),
           Container(height: 15,),
-          _getInfoRow("Phone:", widget.driver.phone),
+          _getInfoRow("PHONE".tr() + ":", widget.driver.phone),
           Container(height: 5,),
-          _getInfoRow("Email:", widget.driver.email),
+          _getInfoRow("EMAIL".tr() + ":", widget.driver.email),
           Container(height: 5,),
-          _getInfoRow("Active:", (_active??false).toString()),
+          _getInfoRow("IS_ACTIVE".tr() + ":", (_active??false).toString()),
           Container(height: 5,),
           Opacity(
             opacity: _active == null?0.3:1,
@@ -54,7 +54,7 @@ class _EditDriverScreenState extends State<EditDriverScreen> {
                 _active = !_active;
                 _editDriverService.setActive(_active);
               }),
-              child: Text(_active??false?"Deactivate":"Activate", style: TextStyle(color: Colors.white),),
+              child: Text((_active??false?"DEACTIVATE":"ACTIVATE").tr(), style: TextStyle(color: Colors.white),),
               color: (_active??false?Colors.red:Colors.green),
             ),
           )

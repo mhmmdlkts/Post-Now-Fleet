@@ -42,7 +42,6 @@ class RegisterNewDriverService {
     } catch (e) {
       print(e);
     }
-    print('bityp');
     return result["key"];
   }
 

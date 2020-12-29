@@ -38,7 +38,6 @@ class _ChartWidgetState extends State<ChartWidget> {
   @override
   void initState() {
     super.initState();
-    //if(!widget._weeklyIncome.isInitialized)
     WeekYearToReadableDateInterval.init().then((value) => setState((){}));
     refreshState();
   }

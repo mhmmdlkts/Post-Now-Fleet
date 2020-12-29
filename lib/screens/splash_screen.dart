@@ -39,9 +39,9 @@ class _SplashScreenState extends State<SplashScreen> {
             child: SizedBox(
               width: width,
               child: LinearProgressIndicator(
-                  backgroundColor: primaryBlue,
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  value: widget.completedTask/widget.totalTask
+                backgroundColor: Colors.white.withOpacity(0.2),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                value: widget.completedTask/widget.totalTask,
               )
             ),
           )

@@ -65,9 +65,9 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(),
-                    _getValueWidget(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", "OVERVIEW.NET_INCOME"),
+                    _getValueWidget(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", "MAIN_SCREEN.TABS.DRIVERS.NET_INCOME"),
                     Container(),
-                    _getValueWidget(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), "OVERVIEW.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'})),
+                    _getValueWidget(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), "MAIN_SCREEN.TABS.DRIVERS.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'})),
                     Container(),
                   ],
                 ),
@@ -76,9 +76,9 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(),
-                    _getValueWidget(driverStatistics.getCancelRate().toStringAsFixed(2) + " %", "OVERVIEW.CANCEL_RATE"),
+                    _getValueWidget(driverStatistics.getCancelRate().toStringAsFixed(2) + " %", "MAIN_SCREEN.TABS.DRIVERS.CANCEL_RATE"),
                     Container(),
-                    _getValueWidget(driverStatistics.getTripCount().toString(), "OVERVIEW.TOTAL_TRIP_COUNT"),
+                    _getValueWidget(driverStatistics.getTripCount().toString(), "MAIN_SCREEN.TABS.DRIVERS.TOTAL_TRIP_COUNT"),
                     Container(),
                   ],
                 ),

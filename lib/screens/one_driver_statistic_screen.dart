@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:post_now_fleet/models/daily_income.dart';
 import 'package:post_now_fleet/models/driver.dart';
 import 'package:post_now_fleet/models/income_element.dart';
 import 'package:post_now_fleet/services/driver_statistics_service.dart';
