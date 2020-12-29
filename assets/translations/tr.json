@@ -14,15 +14,6 @@
   "SEND_MESSAGE": "Send a message",
   "PLEASE_WAIT": "Please wait",
   "LOGIN": {
-    "NAME_FIELD_TITLE": "Name",
-    "NAME_FIELD_HINT": "Your Name",
-    "NAME_FIELD_VALIDATOR_ENTER_NAME": "Please enter your name.",
-    "SURNAME_FIELD_HINT": "Surname",
-    "SURNAME_FIELD_VALIDATOR_ENTER_NAME": "Please enter your surname.",
-    "PHONE_FIELD_HINT": "Example: +436601231212",
-    "PHONE_FIELD_VALIDATOR_ENTER_NAME": "Enter your phone number.",
-    "SMS_CODE_FIELD_HINT": "Example: 123456",
-    "SMS_CODE_FIELD_VALIDATOR_ENTER_NAME": "Enter your SMS verification code.",
     "TITLE": "Welcome Back",
     "SUBTITLE": "Hello there, sign in to continue!",
     "EMAIL_FIELD_TITLE": "Email",
@@ -86,35 +77,31 @@
     },
     "SEND": "Send"
   },
-  "DIRECT_JOB_OVERVIEW": {
-    "ANY_PROBLEMS": "Any problems with this job?"
+  "EDIT_DRIVER_SCREEN": {
+    "IS_ACTIVE": "Is activate",
+    "ACTIVATE": "Activate",
+    "DEACTIVATE": "Deactivate",
+    "PHONE": "Phone",
+    "EMAIL": "Email"
   },
-  "MAPS": {
-    "GO_ONLINE" : "Go Online!",
-    "GO_OFFLINE" : "Go Offline!",
-    "YOU_ARE_ONLINE" : "You are online!",
-    "YOU_ARE_OFFLINE" : "You are offline!",
-    "TAKE_PACKAGE" : "Pick up package",
-    "NO_LOCATION_INFORMATION_MESSAGE" : "Location information is not available.",
-    "SIDE_MENU": {
-      "OVERVIEW": "Order History",
-      "PRIVACY_POLICY": "Privacy Policy",
-      "SOFTWARE_LICENCES": "Software Licences",
-      "CONTACT": "Contact",
-      "SIGN_OUT": "Sign out"
-    },
-    "BOTTOM_MENUS": {
-      "ON_JOB": {
-        "CASH": "The costumer will be paying in cash: {cash} €",
-        "YOUR_CUSTOMER": "Customer: {name}",
-        "PACKAGE_ADDRESS": "Sender adress: {address}\nWill be handed over in front of the house\nDelivery will be handed over by: {name}",
-        "PACKAGE_ADDRESS_EXTRA_SERVICE": "Sender adress: {address}\nDelivery will be handed over by: {name}"
+  "MAIN_SCREEN": {
+    "TABS": {
+      "DRIVERS": {
+        "REGISTER_DRIVERS": "Register New Driver"
       },
-      "PACKAGE_PICKED" : {
-        "YOUR_CUSTOMER": "Customer: {name}",
-        "PACKAGE_ADDRESS": "Recipient adress: {address}\nPickup will be front of the house\nDelivery will be accepted by: {name}",
-        "PACKAGE_ADDRESS_EXTRA_SERVICE": "Recipient adress: {address}\nDelivery will be accepted by: {name}",
-        "LET_HIM_SIGNING": "Let {name} sign"
+      "MAPS": {
+
+      },
+      "STATISTICS": {
+        "TH_WEEK": "{week}. Week",
+        "CANCEL_RATE": "Cancel Rate",
+        "TOTAL_TRIP_COUNT": "Total number of trips",
+        "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
+        "TOTAL_ONLINE_TIME": "Online time (max {max})",
+        "NET_INCOME": "Netto-Fahrpreis",
+        "INCOME_PRO_JOB": "Pro Fahrt",
+        "INCOME_PRO_HOUR": "Pro Stunde bei Fahrt",
+        "TOTAL_DRIVE_TIME": "Total travel time"
       }
     }
   },
@@ -126,9 +113,6 @@
       "CONTACT": "Contact"
     }
   },
-  "SHOPPING_LIST": {
-    "TITLE": "Shopping List"
-  },
   "SETTINGS_SCREEN": {
     "ACCOUNT": {
       "TITLE": "Account",
@@ -139,23 +123,8 @@
     "SOFTWARE_LICENCES": "Licence",
     "SIGN_OUT": "Logout"
   },
-  "CHAT": {
-    "TYPE_MESSAGE_HERE": "Enter your message..."
-  },
-  "SIGNING": {
-    "CLEAR": "Clear",
-    "SIGN": "Sign",
-    "SIGN_TERMS": "With this signature I hereby confirm that I have received the delivery safely and without damage."
-  },
   "OVERVIEW": {
-    "TITLE": "Order History",
     "TH_WEEK": "{week}. Week",
-    "CANCEL_RATE": "Cancel Rate",
-    "TOTAL_TRIP_COUNT": "Total number of trips",
-    "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
-    "TOTAL_ONLINE_TIME": "Online time (max {max})",
-    "NET_INCOME": "Netto-Fahrpreis",
-    "TOTAL_DRIVE_TIME": "Total travel time",
     "SINGLE_ITEM": {
       "DRIVER_CANCELED": "The deliverer has canceled.",
       "CUSTOMER_CANCELED": "The customer has canceled."
@@ -209,17 +178,10 @@
         "ALLOW": "Allow"
       }
     },
-    "CASH_WARN": {
-      "TITLE": "Cash price {cash} €",
-      "MESSAGE": "Müsteriden {cash} € luk hizmet bedelini tahsil ettim."
-    },
     "I_AM_BACK": {
       "TITLE": "Are you back?",
       "MESSAGE": "",
       "POSITIVE": "Yes"
-    },
-    "JOB_REQUEST": {
-      "TITLE": "New Order!"
     },
     "UPDATE_AVAILABLE": {
       "TITLE": "New update available.",
@@ -230,10 +192,6 @@
       "TITLE": "Wtf are you doing here?",
       "BODY": "Bu uygulamayi kullanmaya yetkin yok.",
       "BUTTON": "Close"
-    },
-    "ARE_YOU_SURE_CANCEL": {
-      "CONTENT_WITH_AMOUNT": "For the cancellation of your order you will be charged {amount} €.",
-      "CONTENT": "Are you sure you want to cancel?"
     },
     "JOB_SETTINGS": {
       "CANCEL_JOB" : "Cancel order."
