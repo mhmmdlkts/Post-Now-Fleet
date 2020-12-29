@@ -52,42 +52,34 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    _circularImage(driver.image),
-                    Text(driver.name + " " + driver.surname)
-                  ],
+                Container(
+                  padding: EdgeInsets.only(left: 20, bottom: 20, top: 5),
+                  child: Row(
+                    children: [
+                      _circularImage(driver.image),
+                      Text(driver.name + " " + driver.surname, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)
+                    ],
+                  ),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(
-                      flex: 1,
-                      child: Column(
-                        children: [
-                          Text(driverStatistics.getTripCount().toString(), textAlign: TextAlign.center),
-                          Text("OVERVIEW.TOTAL_TRIP_COUNT".tr(), textAlign: TextAlign.center, maxLines: 1)
-                        ],
-                      ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Column(
-                        children: [
-                          Text(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), textAlign: TextAlign.center),
-                          Text("OVERVIEW.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'}), textAlign: TextAlign.center, maxLines: 1,)
-                        ],
-                      ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Column(
-                        children: [
-                          Text(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", textAlign: TextAlign.center),
-                          Text("OVERVIEW.NET_INCOME".tr(), textAlign: TextAlign.center, maxLines: 1)
-                        ],
-                      ),
-                    )
+                    Container(),
+                    _getValueWidget(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", "OVERVIEW.NET_INCOME"),
+                    Container(),
+                    _getValueWidget(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), "OVERVIEW.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'})),
+                    Container(),
+                  ],
+                ),
+                Container(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(),
+                    _getValueWidget(driverStatistics.getCancelRate().toStringAsFixed(2) + " %", "OVERVIEW.CANCEL_RATE"),
+                    Container(),
+                    _getValueWidget(driverStatistics.getTripCount().toString(), "OVERVIEW.TOTAL_TRIP_COUNT"),
+                    Container(),
                   ],
                 ),
               ],
@@ -98,6 +90,16 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
       ),
     );
   }
+
+  Widget _getValueWidget(String val, String titleKey) => Flexible(
+    flex: 1,
+    child: Column(
+      children: [
+        Text(val, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(titleKey.tr(), textAlign: TextAlign.center, maxLines: 1)
+      ],
+    ),
+  );
 
   Widget _circularImage(String imgUrl) {
     return Container(

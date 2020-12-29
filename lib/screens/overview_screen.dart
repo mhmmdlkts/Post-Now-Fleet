@@ -19,7 +19,7 @@ class OverviewScreen extends StatefulWidget {
 }
 
 class _OverviewScreen extends State<OverviewScreen> {
-  final int proYearWeekCount = 52; // TODO sometimes 53
+  final int proYearWeekCount = 53; // TODO sometimes 52
   final Driver driver;
   OverviewService _overviewService;
   PageController _pageController;

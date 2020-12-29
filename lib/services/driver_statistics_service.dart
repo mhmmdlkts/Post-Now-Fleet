@@ -7,11 +7,17 @@ class DriverStatistics {
   final String driverKey;
   final WeeklyIncome weeklyIncome = WeeklyIncome();
   final List<OnlineOfflineLog> _onOffs = List();
+  int cancelCount;
+  int requestCount;
+  double _cancelRate;
   double _totalIncome;
   int _totalTripCount;
   Duration _totalDurationMs;
 
   DriverStatistics.fromJson(this.driverKey, json) {
+    cancelCount = json["cancels"]??0;
+    requestCount = json["requests"]??0;
+    print(json);
     json["income"]?.forEach((key, val) {
       weeklyIncome.addIncome(IncomeElement(driverKey, key, val));
     });
@@ -29,6 +35,12 @@ class DriverStatistics {
     else
       return weeklyIncome.dailyIncomes[day].getIncome();
     return _totalIncome;
+  }
+
+  double getCancelRate() {
+    if (requestCount == 0)
+      return 0;
+    return (cancelCount/requestCount) * 100;
   }
 
   int getTripCount({int day = -1}) {

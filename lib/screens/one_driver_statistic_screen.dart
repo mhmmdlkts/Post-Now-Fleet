@@ -40,7 +40,11 @@ class _OneDriverStatisticScreenState extends State<OneDriverStatisticScreen> {
               _chosenDay = val;
             }
           )),
-          _chosenDay == -1? Container():
+          _chosenDay == -1? Column(
+            children: widget.driverStatistics.weeklyIncome.dailyIncomes.map((e2) => Column(
+              children: e2.incomes.map((e) => _getSingleJobWidget(e)).toList(),
+            )).toList(),
+          ):
           Column(
             children: widget.driverStatistics.weeklyIncome.dailyIncomes[_chosenDay].incomes.map((e) => _getSingleJobWidget(e)).toList()
           )
@@ -87,6 +91,8 @@ class _OneDriverStatisticScreenState extends State<OneDriverStatisticScreen> {
             backgroundImage: NetworkImage(widget.driver.image),
             backgroundColor: Colors.transparent,
           ),
+          Container(height: 5),
+          Text(widget.driver.name + " " + widget.driver.surname, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)
         ],
       ),
     );

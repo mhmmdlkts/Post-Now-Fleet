@@ -8,8 +8,10 @@ class AllDriversStatisticsService {
   static String currentDate;
 
   static Map<String, DriverStatistics> getDriversMap(String fleetId, VoidCallback setState, {String date}) {
-    if (date.toString().contains(null.toString()))
+    if (date.toString() == null.toString())
       date = currentDate;
+    else
+      print(date);
     if (statistics.containsKey(date))
       return statistics[date];
     Map<String, DriverStatistics> newValue = Map();

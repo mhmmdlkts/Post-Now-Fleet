@@ -28,7 +28,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
   int _chosenDay = -1;
   TextStyle _titleTextStyle = TextStyle(fontSize: 28);
   TextStyle _textStyle = TextStyle(fontSize: 24, color: Colors.black.withOpacity(0.6));
-  final int proYearWeekCount = 52; // TODO sometimes 53
+  final int proYearWeekCount = 53; // TODO sometimes 52
   OverviewService _overviewService;
   PageController _pageController;
   int _maxPage = 52 * 5;
@@ -145,15 +145,15 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
         onTap: onTap,
         borderRadius: BorderRadius.circular(18),
         child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Center(
-              child: Column(
-                children: [
-                  Text(val, style: TextStyle(fontSize: 36, color: Colors.white), textAlign: TextAlign.center),
-                  Text(explain, style: TextStyle(fontSize: 16, color: Colors.white), textAlign: TextAlign.center),
-                ],
-              ),
-            )
+          padding: EdgeInsets.all(16),
+          child: Center(
+            child: Column(
+              children: [
+                Text(val, style: TextStyle(fontSize: 36, color: Colors.white), textAlign: TextAlign.center),
+                Text(explain, style: TextStyle(fontSize: 16, color: Colors.white), textAlign: TextAlign.center),
+              ],
+            ),
+          )
         ),
       )
     ),

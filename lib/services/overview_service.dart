@@ -18,7 +18,7 @@ class OverviewService {
   
   Future<void> initCompletedJobs({int year, int week}) async {
     weeklyIncome.reset();
-    await _jobsRef.child(_getChildKey(year, week)).child(driver.key).orderByChild("finished-time").once().then((DataSnapshot snapshot) => {
+    await _jobsRef.child(getChildKey(year: year, week: week)).child(driver.key).orderByChild("finished-time").once().then((DataSnapshot snapshot) => {
     weeklyIncome.reset(),
       if (snapshot.value != null) {
         snapshot.value.forEach((key, value) {
@@ -28,21 +28,11 @@ class OverviewService {
     });
   }
 
-  static String getCurrentChildKey() => _getChildKey(currentYear(), dayOfWeek());
-
-  static String _getChildKey(int year, int week) {
+  static String getChildKey({int year, int week}) {
     if (year == null) 
       year = currentYear();
     if (week == null) 
       week = dayOfWeek();
-    if (week < 0) {
-      year--;
-      week = 52;
-    }
-    if (week > 52) {
-      year++;
-      week = 0;
-    }
     return year.toString() + "-" + week.toString();
   }
 
