@@ -17,7 +17,6 @@ class DriverStatistics {
   DriverStatistics.fromJson(this.driverKey, json) {
     cancelCount = json["cancels"]??0;
     requestCount = json["requests"]??0;
-    print(json);
     json["income"]?.forEach((key, val) {
       weeklyIncome.addIncome(IncomeElement(driverKey, key, val));
     });
@@ -25,6 +24,7 @@ class DriverStatistics {
       _onOffs.add(OnlineOfflineLog(driverKey, key, val));
     });
     _onOffs.add(OnlineOfflineLog(driverKey, DateTime.now().millisecondsSinceEpoch.toString(), false));
+    print('thi: ' + driverKey);
   }
 
   double getTotalIncome({int day = -1}) {

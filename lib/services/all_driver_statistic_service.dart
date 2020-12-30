@@ -10,8 +10,6 @@ class AllDriversStatisticsService {
   static Map<String, DriverStatistics> getDriversMap(String fleetId, VoidCallback setState, {String date}) {
     if (date.toString() == null.toString())
       date = currentDate;
-    else
-      print(date);
     if (statistics.containsKey(date))
       return statistics[date];
     Map<String, DriverStatistics> newValue = Map();
@@ -19,7 +17,6 @@ class AllDriversStatisticsService {
       value?.value?.forEach((key,val) {
         newValue[key] = DriverStatistics.fromJson(key, val);
       });
-
       statistics[date] = newValue;
       setState.call();
     });

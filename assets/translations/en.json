@@ -103,7 +103,37 @@
         "INCOME_PRO_HOUR": "Pro Stunde bei Fahrt",
         "TOTAL_DRIVE_TIME": "Total travel time"
       }
+    },
+    "SIDE_MENU": {
+      "PRIVACY_POLICY": "Privacy Policy",
+      "SOFTWARE_LICENCES": "Software Licenses",
+      "CONTACT": "Contact",
+      "SIGN_OUT": "Logout"
     }
+  },
+  "CONTACT_FORM": {
+    "TITLE": "Contact Form",
+    "NAME": {
+      "LABEL": "Name",
+      "HINT_LABEL": "Please enter your name."
+    },
+    "EMAIL": {
+      "LABEL": "Email",
+      "HINT_LABEL": "Please enter your email address."
+    },
+    "PHONE": {
+      "LABEL": "Telephone number",
+      "HINT_LABEL": "Please enter your phone number."
+    },
+    "SUBJECT": {
+      "LABEL": "Subject",
+      "HINT_LABEL": "Please enter a subject."
+    },
+    "CONTENT": {
+      "LABEL": "Content",
+      "HINT_LABEL": "Enter a content"
+    },
+    "SEND": "Send"
   },
   "LEGAL": {
     "TITLE": "Legal",

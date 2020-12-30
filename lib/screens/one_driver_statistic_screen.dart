@@ -67,7 +67,8 @@ class _OneDriverStatisticScreenState extends State<OneDriverStatisticScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(getReadableFinishDay(incomeElement.time), style: TextStyle(color: Colors.white))
+                    Text(getReadableFinishDay(incomeElement.time), style: TextStyle(color: Colors.white)),
+                    Text(incomeElement.income.toStringAsFixed(2) + " €", style: TextStyle(color: Colors.white))
                   ],
                 )
             )

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:post_now_fleet/decoration/my_colors.dart';
 import 'package:post_now_fleet/models/fleet.dart';
 import 'package:post_now_fleet/screens/splash_screen.dart';
 import 'package:post_now_fleet/screens/tabs/drivers_list_tab.dart';
@@ -8,12 +9,16 @@ import 'package:post_now_fleet/screens/tabs/maps_view_tab.dart';
 import 'package:post_now_fleet/screens/tabs/total_statistic_tab.dart';
 import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
 import 'package:post_now_fleet/services/all_drivers_service.dart';
+import 'package:post_now_fleet/services/auth_service.dart';
+import 'package:post_now_fleet/services/legal_service.dart';
 import 'package:post_now_fleet/services/main_screen_service.dart';
 import 'package:post_now_fleet/services/overview_service.dart';
 import 'package:screen/screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'dart:io' show Platform;
 import 'package:intl/date_symbol_data_local.dart';
+
+import 'contact_form_screen.dart';
 
 
 
@@ -77,6 +82,7 @@ class _MainScreenState extends State<MainScreen> {
           length: 3,
           child: Scaffold(
             appBar: AppBar(
+              iconTheme:  IconThemeData( color: Colors.white),
               bottom: TabBar(
                 onTap: (index) {
                   setState(() {
@@ -92,6 +98,61 @@ class _MainScreenState extends State<MainScreen> {
               title: Text('APP_NAME'.tr()),
             ),
             body: _getBody(),
+            drawer: Drawer(
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  DrawerHeader(
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(widget.myFleet.name, style: TextStyle(fontSize: 22, color: Colors.white)),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                      color: primaryBlue,
+                    ),
+                  ),
+                  ListTile(
+                    title: Text('MAIN_SCREEN.SIDE_MENU.CONTACT'.tr()),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ContactFormScreen(widget.user)),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: Text('MAIN_SCREEN.SIDE_MENU.SOFTWARE_LICENCES'.tr()),
+                    onTap: () {
+                      LegalService.openLicences(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('MAIN_SCREEN.SIDE_MENU.PRIVACY_POLICY'.tr()),
+                    onTap: () {
+                      LegalService.openPrivacyPolicy(context);
+                    },
+                  ),
+                  ListTile(
+                    title: Text('MAIN_SCREEN.SIDE_MENU.SIGN_OUT'.tr(), style: TextStyle(color: Colors.redAccent),),
+                    onTap: () {
+                      AuthService().signOut();
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
         _isInitialized ? Container() : SplashScreen(totalTask: _initCount, completedTask: _initDone,),

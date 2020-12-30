@@ -33,7 +33,7 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
         ),
       ),
       body: ListView(
-        children: AllDriversStatisticsService.statistics[widget.date].keys.map((e) => _getSingleDriverWidget(e)).toList(),
+        children: AllDriversStatisticsService.statistics[widget.date]?.keys?.map((e) => _getSingleDriverWidget(e))?.toList()??[],
       ),
     );
   }
@@ -43,7 +43,6 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
     final Driver driver = AllDriverService.allDrivers.where((element) => element.key == driverKey).first;
     return InkWell(
       onTap: () {
-        print(driver.name);
         Navigator.push(context, MaterialPageRoute(builder: (context) => OneDriverStatisticScreen(widget.date, driver, driverStatistics)));
       },
       child: Column(
@@ -65,9 +64,9 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(),
-                    _getValueWidget(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", "MAIN_SCREEN.TABS.DRIVERS.NET_INCOME"),
+                    _getValueWidget(driverStatistics.weeklyIncome.getTotalIncome().toStringAsFixed(2) + " €", "MAIN_SCREEN.TABS.STATISTICS.NET_INCOME".tr()),
                     Container(),
-                    _getValueWidget(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), "MAIN_SCREEN.TABS.DRIVERS.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'})),
+                    _getValueWidget(_getTotalOnlineTime(driverStatistics.getTotalOnlineDuration()), "MAIN_SCREEN.TABS.STATISTICS.TOTAL_ONLINE_TIME".tr(namedArgs: {'max': '168'})),
                     Container(),
                   ],
                 ),
@@ -76,9 +75,9 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(),
-                    _getValueWidget(driverStatistics.getCancelRate().toStringAsFixed(2) + " %", "MAIN_SCREEN.TABS.DRIVERS.CANCEL_RATE"),
+                    _getValueWidget(driverStatistics.getCancelRate().toStringAsFixed(2) + " %", "MAIN_SCREEN.TABS.STATISTICS.CANCEL_RATE".tr()),
                     Container(),
-                    _getValueWidget(driverStatistics.getTripCount().toString(), "MAIN_SCREEN.TABS.DRIVERS.TOTAL_TRIP_COUNT"),
+                    _getValueWidget(driverStatistics.getTripCount().toString(), "MAIN_SCREEN.TABS.STATISTICS.TOTAL_TRIP_COUNT".tr()),
                     Container(),
                   ],
                 ),
@@ -91,12 +90,12 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
     );
   }
 
-  Widget _getValueWidget(String val, String titleKey) => Flexible(
+  Widget _getValueWidget(String val, String title) => Flexible(
     flex: 1,
     child: Column(
       children: [
         Text(val, textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
-        Text(titleKey.tr(), textAlign: TextAlign.center, maxLines: 1)
+        Text(title, textAlign: TextAlign.center, maxLines: 1)
       ],
     ),
   );

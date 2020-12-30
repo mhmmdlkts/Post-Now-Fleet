@@ -103,8 +103,8 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
         child: Column(
           children: [
             _getInfo("MAIN_SCREEN.TABS.STATISTICS.NET_INCOME".tr(), _driverStatisticsService.getTotalIncome(day: _chosenDay).toStringAsFixed(2)+ " €", _titleTextStyle),
-            _getInfo("MAIN_SCREEN.TABS.STATISTICS.INCOME_PRO_JOB", _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
-            _getInfo("MAIN_SCREEN.TABS.STATISTICS_INCOME_PRO_HOUR".tr(), _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
+            _getInfo("MAIN_SCREEN.TABS.STATISTICS.INCOME_PRO_JOB".tr(), _getProDriveIncome().toStringAsFixed(2)+ " €", _textStyle),
+            _getInfo("MAIN_SCREEN.TABS.STATISTICS.INCOME_PRO_HOUR".tr(), _getProHourIncome().toStringAsFixed(2)+ " €", _textStyle),
           ],
         ),
       )
@@ -190,8 +190,8 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
   Widget _getInfo(String text, String val, TextStyle textStyle) => Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Text(text, style: textStyle,),
-      Text(val, style: textStyle,),
+      Text(text, style: textStyle, maxLines: 1,),
+      Flexible(child: Text(val, style: textStyle, maxLines: 1,))
     ],
   );
 }

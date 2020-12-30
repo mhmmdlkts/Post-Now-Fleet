@@ -20,8 +20,8 @@ class AuthService {
     return Container();
   }
 
-  signOut() {
-    FirebaseAuth.instance.signOut();
+  Future signOut() {
+    return FirebaseAuth.instance.signOut();
   }
 
   signIn(AuthCredential authCredential) {
