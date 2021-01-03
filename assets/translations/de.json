@@ -1,205 +1,205 @@
 {
   "APP_NAME": "Post Now Fleet",
-  "OK": "OK",
-  "NO": "No",
-  "YES": "Yes",
-  "CANCEL": "Cancel",
-  "ACCEPT": "Accept",
-  "WARNING": "Attention",
-  "CLOSE": "Close",
-  "ERROR": "Error",
-  "FAILED": "Failed",
-  "SETTINGS": "Settings",
-  "THANKS": "Thanks",
-  "SEND_MESSAGE": "Send a message",
-  "PLEASE_WAIT": "Please wait",
+  "OK": "Ok",
+  "NO": "Nein",
+  "YES": "Ja",
+  "CANCEL": "Abbrechen",
+  "ACCEPT": "Akzeptieren",
+  "WARNING": "Achtung",
+  "CLOSE": "Schließen",
+  "ERROR": "Fehler",
+  "FAILED": "fehlgeschlagen",
+  "SETTINGS": "Einstellungen",
+  "THANKS": "Danke",
+  "SEND_MESSAGE": "Nachricht senden",
+  "PLEASE_WAIT": "Bitte warten",
   "LOGIN": {
-    "TITLE": "Welcome Back",
-    "SUBTITLE": "Hello there, sign in to continue!",
-    "EMAIL_FIELD_TITLE": "Email",
-    "EMAIL_FIELD_HINT": "Your email",
-    "EMAIL_FIELD_VALIDATOR_ENTER_NAME": "Please enter your email address.",
+    "TITLE": "Wilkommen zurück",
+    "SUBTITLE": "Hallo, melde dich an, um fortzufahren.",
+    "EMAIL_FIELD_TITLE": "E-mail Adresse",
+    "EMAIL_FIELD_HINT": "Deine E-Mail-Adresse",
+    "EMAIL_FIELD_VALIDATOR_ENTER_NAME": "Bitte gib deine E-Mail-Adresse ein.",
     "PASSWORD_FIELD_TITLE": "Password",
-    "PASSWORD_FIELD_HINT": "Your Password",
-    "PASSWORD_FIELD_VALIDATOR_ENTER_NAME": "Please enter your password.",
-    "AGREE_TERMS_AND_POLICY": "By signing in, you agree to our Privacy Policy and Privacy Policy and Terms & Conditions",
-    "CONTINUE_BUTTON": "Sign In",
-    "DON'T_HAVE_AN_ACCOUNT": "Don't have an account?",
-    "SIGN_IN": "Sign in",
-    "SIGN_UP": "Sign up",
-    "LOGIN_PROBLEMS": "Having trouble signing in?",
-    "AUTO_FILL_EMAIL_SUBJECT": "I'm having trouble signing in to Post Now Driver App",
+    "PASSWORD_FIELD_HINT": "Dein Password",
+    "PASSWORD_FIELD_VALIDATOR_ENTER_NAME": "Bitte gib dein Passwort ein.",
+    "AGREE_TERMS_AND_POLICY": "Mit deiner Anmeldung stimmst du unseren Nutzungsbedingungen und Datenschutzbestimmungen zu.",
+    "CONTINUE_BUTTON": "Anmelden",
+    "DON'T_HAVE_AN_ACCOUNT": "Hast du kein Nutzerkonto?",
+    "SIGN_IN": "Anmelden",
+    "SIGN_UP": "Registrieren",
+    "LOGIN_PROBLEMS": "Probleme beim Anmelden?",
+    "AUTO_FILL_EMAIL_SUBJECT": "Ich habe Probleme, mich bei der Post Now Fleet App anzumelden.",
     "ERROR_MESSAGES" : {
-      "ERROR_INVALID_EMAIL": "Your email address seems to be invalid.",
-      "ERROR_WRONG_PASSWORD": "The password you entered is incorrect.",
-      "ERROR_USER_NOT_FOUND": "A user with this email address does not exist.",
-      "ERROR_USER_DISABLED": "The user with this email address has been deactivated.",
-      "ERROR_TOO_MANY_REQUESTS" : "Too many requests, try again later.",
-      "ERROR_OPERATION_NOT_ALLOWED" : "Signing in with email and password is not enabled.",
-      "ERROR_EMAIL_ALREADY_IN_USE": "This email address is already in use."
+      "ERROR_INVALID_EMAIL": "Deine E-Mail-Adresse scheint ungültig zu sein.",
+      "ERROR_WRONG_PASSWORD": "Das eingegebene Passwort ist falsch.",
+      "ERROR_USER_NOT_FOUND": "Ein Benutzer mit dieser E-Mail-Adresse existiert nicht.",
+      "ERROR_USER_DISABLED": "Der Benutzer mit dieser E-Mail-Adresse wurde deaktiviert.",
+      "ERROR_TOO_MANY_REQUESTS" : "Zu viele Anfragen versuchen es später erneut.",
+      "ERROR_OPERATION_NOT_ALLOWED" : "Die Anmeldung mit E-Mail und Passwort ist nicht aktiviert.",
+      "ERROR_EMAIL_ALREADY_IN_USE": "Diese E-Mail-Adresse wird bereits verwendet."
     }
   },
   "MONTHS": {
-    "JANUARY": "January",
-    "FEBRUARY": "February",
-    "MARCH": "March",
+    "JANUARY": "Januar",
+    "FEBRUARY": "Februar",
+    "MARCH": "März",
     "APRIL": "April",
-    "MAY": "May",
-    "JUNE": "June",
-    "JULY": "July",
+    "MAY": "Mai",
+    "JUNE": "Juni",
+    "JULY": "Juli",
     "AUGUST": "August",
     "SEPTEMBER": "September",
-    "OCTOBER": "October",
+    "OCTOBER": "Oktober",
     "NOVEMBER": "November",
-    "DECEMBER": "December"
+    "DECEMBER": "Dezember"
   },
   "CONTACT_FORM": {
-    "TITLE": "Contact Form",
+    "TITLE": "Kontaktformular",
     "NAME": {
       "LABEL": "Name",
-      "HINT_LABEL": "Please enter your name."
+      "HINT_LABEL": "Bitte gib deinen Namen ein."
     },
     "EMAIL": {
-      "LABEL": "Email",
-      "HINT_LABEL": "Please enter your email address."
+      "LABEL": "E-mail Adresse",
+      "HINT_LABEL": "Bitte gib deine E-Mail-Adresse ein."
     },
     "PHONE": {
-      "LABEL": "Telephone number",
-      "HINT_LABEL": "Please enter your phone number."
+      "LABEL": "Telefonnummer",
+      "HINT_LABEL": "Bitte gib deine Telefonnummer ein."
     },
     "SUBJECT": {
-      "LABEL": "Subject",
-      "HINT_LABEL": "Please enter a subject."
+      "LABEL": "Betreff",
+      "HINT_LABEL": "Gib einen Betreff ein."
     },
     "CONTENT": {
-      "LABEL": "Content",
-      "HINT_LABEL": "Enter a content"
+      "LABEL": "Inhalt",
+      "HINT_LABEL": "Gib einen Inhalt ein"
     },
-    "SEND": "Send"
+    "SEND": "Senden"
   },
   "EDIT_DRIVER_SCREEN": {
-    "IS_ACTIVE": "Is activate",
-    "ACTIVATE": "Activate",
-    "DEACTIVATE": "Deactivate",
-    "PHONE": "Phone",
-    "EMAIL": "Email"
+    "IS_ACTIVE": "Aktiv",
+    "ACTIVATE": "Aktivieren",
+    "DEACTIVATE": "Deaktivieren",
+    "PHONE": "Telefonnummer",
+    "EMAIL": "E-mail Adresse"
   },
   "MAIN_SCREEN": {
     "TABS": {
       "DRIVERS": {
-        "REGISTER_DRIVERS": "Register New Driver"
+        "REGISTER_DRIVERS": "Registriere neuen Zusteller"
       },
       "MAPS": {
 
       },
       "STATISTICS": {
-        "TH_WEEK": "{week}. Week",
-        "CANCEL_RATE": "Cancel Rate",
-        "TOTAL_TRIP_COUNT": "Total number of trips",
-        "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
-        "TOTAL_ONLINE_TIME": "Online time (max {max})",
+        "TH_WEEK": "{week}. Woche",
+        "CANCEL_RATE": "Abbruchs Rate",
+        "TOTAL_TRIP_COUNT": "Gesamtzahl der Fahrten",
+        "TOTAL_WORKED_DRIVER_COUNT": "Insgesamt gearbeitete Zusteller",
+        "TOTAL_ONLINE_TIME": "Online-Gesamtzeit (max {max})",
         "NET_INCOME": "Netto-Fahrpreis",
         "INCOME_PRO_JOB": "Pro Fahrt",
         "INCOME_PRO_HOUR": "Pro Stunde bei Fahrt",
-        "TOTAL_DRIVE_TIME": "Total travel time"
+        "TOTAL_DRIVE_TIME": "Gesamtreisezeit"
       }
     }
   },
   "LEGAL": {
-    "TITLE": "Legal",
+    "TITLE": "Rechtliches",
     "LegalTyp": {
-      "PRIVACY_POLICY": "Privacy Policy",
-      "SOFTWARE_LICENCES": "Software Licences",
-      "CONTACT": "Contact"
+      "PRIVACY_POLICY": "Datenschutzerklärung",
+      "SOFTWARE_LICENCES": "Softwarelizenzen",
+      "CONTACT": "Kontakt"
     }
   },
   "SETTINGS_SCREEN": {
     "ACCOUNT": {
-      "TITLE": "Account",
+      "TITLE": "Konto",
       "NAME_HINT": "Name",
-      "PHONE_HINT": "Phone",
-      "EMAIL_HINT": "Email"
+      "PHONE_HINT": "Telefonnummer",
+      "EMAIL_HINT": "E-mail Adresse"
     },
-    "SOFTWARE_LICENCES": "Licence",
-    "SIGN_OUT": "Logout"
+    "SOFTWARE_LICENCES": "Lizenzen",
+    "SIGN_OUT": "Abmelden"
   },
   "OVERVIEW": {
-    "TH_WEEK": "{week}. Week",
+    "TH_WEEK": "{week}. Woche",
     "SINGLE_ITEM": {
-      "DRIVER_CANCELED": "The deliverer has canceled.",
-      "CUSTOMER_CANCELED": "The customer has canceled."
+      "DRIVER_CANCELED": "Der Zusteller hat storniert.",
+      "CUSTOMER_CANCELED": "Der Kunde hat storniert."
     },
     "MODELS": {
-      "ORDER_DATE": "Order Date",
-      "ORDER_TIME": "Order Time",
+      "ORDER_DATE": "Auftragsdatum",
+      "ORDER_TIME": "Auftragszeit",
       "JOB": {
-        "WAITING": "Waiting for Deliverer.",
-        "ON_ROAD": "The Deliverer has accepted your order.",
-        "PACKAGE_PICKED": "The Deliverer has picked up the order.",
-        "FINISHED": "Your order has been delivered.",
-        "CANCELED": "Order was canceled.",
-        "DRIVER_CANCELED": "The deliverer has canceled.",
-        "CUSTOMER_CANCELED": "The customer has canceled."
+        "WAITING": "Warten auf Zusteller.",
+        "ON_ROAD": "Der Zusteller hat deinen Auftrag angenommen.",
+        "PACKAGE_PICKED": "Der Zusteller hat die Bestellung abgeholt.",
+        "FINISHED": "Deine Bestellung wurde geliefert.",
+        "CANCELLED": "Auftrag wurde storniert.",
+        "DRIVER_CANCELED": "Der Zusteller hat storniert.",
+        "CUSTOMER_CANCELED": "Der Kunde hat storniert."
       }
     }
   },
   "MODELS": {
     "JOB": {
-      "WAITING": "Waiting for Deliverer.",
-      "ON_ROAD": "The Deliverer has accepted your order.",
-      "PACKAGE_PICKED": "The Deliverer has picked up the order.",
-      "FINISHED": "Your order has been delivered.",
-      "CANCELED": "Order was canceled.",
-      "DRIVER_CANCELED": "The deliverer has canceled.",
-      "CUSTOMER_CANCELED": "The customer has canceled."
+      "WAITING": "Warten auf Zusteller.",
+      "ON_ROAD": "Der Zusteller hat deinen Auftrag angenommen.",
+      "PACKAGE_PICKED": "Der Zusteller hat die Bestellung abgeholt.",
+      "FINISHED": "Deine Bestellung wurde geliefert.",
+      "CANCELLED": "Auftrag wurde storniert.",
+      "DRIVER_CANCELED": "Der Zusteller hat storniert.",
+      "CUSTOMER_CANCELED": "Der Kunde hat storniert."
     }
   },
   "ENUMS": {
     "DAYS": {
-      "MONDAY": "Monday",
-      "TUESDAY": "Tuesday",
-      "WEDNESDAY": "Wednesday",
-      "THURSDAY": "Thursday",
-      "FRIDAY": "Friday",
-      "SATURDAY": "Saturday",
-      "SUNDAY": "Sunday"
+      "MONDAY": "Montag",
+      "TUESDAY": "Dienstag",
+      "WEDNESDAY": "Mittwoch",
+      "THURSDAY": "Donnerstag",
+      "FRIDAY": "Freitag",
+      "SATURDAY": "Samstag",
+      "SUNDAY": "Sonntag"
     }
   },
   "DIALOGS": {
     "PERMISSIONTYPENUM": {
       "CAMERA": {
-        "TITLE": "Allow Post Now Driver to take pictures.",
-        "MESSAGE": "Post Now needs to access your camera.",
-        "ALLOW": "Allow"
+        "TITLE": "Zulassen, dass Post Now Bilder aufnimmt?",
+        "MESSAGE": "Post Now muss auf Ihre Kamera zugreifen.",
+        "ALLOW": "Zulassen"
       },
       "LOCATION": {
-        "TITLE": "Allow Post Now Driver to access this device's location.",
-        "MESSAGE": "In order to guarantee a better function, give the app the authorization to access the device's location.",
-        "ALLOW": "Allow"
+        "TITLE": "Zulassen, dass Post Now den Gerätestandort abruft?",
+        "MESSAGE": "Um eine bessere Funktion zu gewährleisten, gib der App die Berechtigung, auf den Gerätestandort zuzugreifen",
+        "ALLOW": "Zulassen"
       }
     },
     "I_AM_BACK": {
-      "TITLE": "Are you back?",
+      "TITLE": "Bist du wieder da?",
       "MESSAGE": "",
-      "POSITIVE": "Yes"
+      "POSITIVE": "Ja"
     },
     "UPDATE_AVAILABLE": {
-      "TITLE": "New update available.",
-      "BODY": "The latest update must be installed to use the app.",
-      "BUTTON": "Update Now!"
+      "TITLE": "Neues Update verfügbar.",
+      "BODY": "Um die App nutzen zu können, muss das neueste Update installiert sein.",
+      "BUTTON": "Jetzt aktualisieren!"
     },
     "NO_ACCOUNT": {
-      "TITLE": "Wtf are you doing here?",
-      "BODY": "Bu uygulamayi kullanmaya yetkin yok.",
-      "BUTTON": "Close"
+      "TITLE": "Warnung!",
+      "BODY": "Sie sind nicht berechtigt, diese Anwendung zu verwenden.",
+      "BUTTON": "Schlißen"
     },
     "JOB_SETTINGS": {
-      "CANCEL_JOB" : "Cancel order."
+      "CANCEL_JOB" : "Auftrag stornieren."
     },
     "SETTINGS": {
       "YOU_CANT_CHANGE": {
-        "MESSAGE": "If you want to change your datas, contact us.",
-        "CONTACT": "Contact us"
+        "MESSAGE": "Wenn du deine Daten ändern willst, kontaktiere uns.",
+        "CONTACT": "Kontaktiere uns"
       }
     }
   }

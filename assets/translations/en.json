@@ -60,11 +60,11 @@
       "HINT_LABEL": "Please enter your name."
     },
     "EMAIL": {
-      "LABEL": "Email",
+      "LABEL": "Email Adress",
       "HINT_LABEL": "Please enter your email address."
     },
     "PHONE": {
-      "LABEL": "Telephone number",
+      "LABEL": "Phone number",
       "HINT_LABEL": "Please enter your phone number."
     },
     "SUBJECT": {
@@ -78,25 +78,25 @@
     "SEND": "Send"
   },
   "EDIT_DRIVER_SCREEN": {
-    "IS_ACTIVE": "Is activate",
+    "IS_ACTIVE": "Active",
     "ACTIVATE": "Activate",
     "DEACTIVATE": "Deactivate",
-    "PHONE": "Phone",
-    "EMAIL": "Email"
+    "PHONE": "Phone Number",
+    "EMAIL": "Email Adress"
   },
   "MAIN_SCREEN": {
     "TABS": {
       "DRIVERS": {
-        "REGISTER_DRIVERS": "Register New Driver"
+        "REGISTER_DRIVERS": "Register New Deliverer"
       },
       "MAPS": {
 
       },
       "STATISTICS": {
         "TH_WEEK": "{week}. Week",
-        "CANCEL_RATE": "Cancel Rate",
+        "CANCEL_RATE": "Cancellation Rate",
         "TOTAL_TRIP_COUNT": "Total number of trips",
-        "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
+        "TOTAL_WORKED_DRIVER_COUNT": "Total of worked Deliverers",
         "TOTAL_ONLINE_TIME": "Online time (max {max})",
         "NET_INCOME": "Netto-Fahrpreis",
         "INCOME_PRO_JOB": "Pro Fahrt",
@@ -118,11 +118,11 @@
       "HINT_LABEL": "Please enter your name."
     },
     "EMAIL": {
-      "LABEL": "Email",
+      "LABEL": "Email Adress",
       "HINT_LABEL": "Please enter your email address."
     },
     "PHONE": {
-      "LABEL": "Telephone number",
+      "LABEL": "Phone number",
       "HINT_LABEL": "Please enter your phone number."
     },
     "SUBJECT": {
@@ -147,8 +147,8 @@
     "ACCOUNT": {
       "TITLE": "Account",
       "NAME_HINT": "Name",
-      "PHONE_HINT": "Phone",
-      "EMAIL_HINT": "Email"
+      "PHONE_HINT": "Phone Number",
+      "EMAIL_HINT": "Email Adress"
     },
     "SOFTWARE_LICENCES": "Licence",
     "SIGN_OUT": "Logout"
@@ -219,8 +219,8 @@
       "BUTTON": "Update Now!"
     },
     "NO_ACCOUNT": {
-      "TITLE": "Wtf are you doing here?",
-      "BODY": "Bu uygulamayi kullanmaya yetkin yok.",
+      "TITLE": "Warning!",
+      "BODY": "You are not authorized to use this application.",
       "BUTTON": "Close"
     },
     "JOB_SETTINGS": {
@@ -228,7 +228,7 @@
     },
     "SETTINGS": {
       "YOU_CANT_CHANGE": {
-        "MESSAGE": "If you want to change your datas, contact us.",
+        "MESSAGE": "If you want to change your data, contact us.",
         "CONTACT": "Contact us"
       }
     }
