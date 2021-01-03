@@ -25,7 +25,6 @@ class ChartWidget extends StatefulWidget {
 
   ChartWidget(this._weeklyIncome, this.week,  this.year, this.func);
 
-
   @override
   _ChartWidgetState createState() => _ChartWidgetState();
 }
@@ -201,6 +200,6 @@ class _ChartWidgetState extends State<ChartWidget> {
     if (touchedIndex != -1) {
       return widget._weeklyIncome.dailyIncomes[touchedIndex].getDayName();
     }
-    return WeekYearToReadableDateInterval.getReadable(year: widget.year, week: widget.week);;
+    return WeekYearToReadableDateInterval.getReadable(year: widget.year, week: widget.week);
   }
 }

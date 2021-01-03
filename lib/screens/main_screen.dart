@@ -68,7 +68,7 @@ class _MainScreenState extends State<MainScreen> {
     AllDriverService.initList(widget.myFleet.key, (val) => setState((){
       _initCount += val;
     }), () => _nextInitializeDone('5')).then((value) => _nextInitializeDone("1"));
-    AllDriversStatisticsService.currentDate = OverviewService.getChildKey();
+    AllDriversStatisticsService.currentDate = OverviewService.getChildKey(null, null);
 
     _initCount++;
     AllDriversStatisticsService.getDriversMap(widget.myFleet.key, () => _nextInitializeDone("2"));

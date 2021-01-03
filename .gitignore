@@ -40,6 +40,11 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
+# Android Sign
+key.properties
+*.apk
+*.abb
+
 # Firebase
 google-services.json
 GoogleService-Info.plist

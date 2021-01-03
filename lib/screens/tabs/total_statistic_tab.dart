@@ -54,7 +54,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
         int year = _pageToYear(_pageToReadable(index));
         int week = _pageToWeek(_pageToReadable(index));
         setState(() {
-          _shownDate = '$year-$week';
+          _shownDate = OverviewService.getChildKey(year, week);
         });
         _initOverview(year: year, week: week);
       },
@@ -65,7 +65,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
   }
 
   _initOverview({int year, int week}) {
-    _initDrivers(date: '$year-$week');
+    _initDrivers(date: OverviewService.getChildKey(year, week));
   }
 
   _refresh() {
@@ -121,7 +121,7 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
 
   int _pageToWeek(page) {
     int year = _pageToYear(page);
-    int a = page;// % (_overviewService.getYearsWeekCount(year));
+    int a = page;
     for (int i = OverviewService.currentYear()-1; i >= year; i--) {
       a += OverviewService.getYearsWeekCount(i);
     }

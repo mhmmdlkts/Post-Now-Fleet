@@ -24,7 +24,6 @@ class DriverStatistics {
       _onOffs.add(OnlineOfflineLog(driverKey, key, val));
     });
     _onOffs.add(OnlineOfflineLog(driverKey, DateTime.now().millisecondsSinceEpoch.toString(), false));
-    print('thi: ' + driverKey);
   }
 
   double getTotalIncome({int day = -1}) {

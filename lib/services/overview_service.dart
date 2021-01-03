@@ -7,7 +7,7 @@ class OverviewService {
   final Driver driver;
   final DatabaseReference _jobsRef = FirebaseDatabase.instance.reference().child('completed-jobs');
   final WeeklyIncome weeklyIncome = WeeklyIncome();
-  
+
   OverviewService(this.driver);
 
   static int getDayOfMonth(int year, int month) {
@@ -15,10 +15,10 @@ class OverviewService {
     if (year % 4 == 0) days[DateTime.february]++;
     return days[month];
   }
-  
+
   Future<void> initCompletedJobs({int year, int week}) async {
     weeklyIncome.reset();
-    await _jobsRef.child(getChildKey(year: year, week: week)).child(driver.key).orderByChild("finished-time").once().then((DataSnapshot snapshot) => {
+    await _jobsRef.child(getChildKey(year, week)).child(driver.key).orderByChild("finished-time").once().then((DataSnapshot snapshot) => {
     weeklyIncome.reset(),
       if (snapshot.value != null) {
         snapshot.value.forEach((key, value) {
@@ -28,11 +28,16 @@ class OverviewService {
     });
   }
 
-  static String getChildKey({int year, int week}) {
-    if (year == null) 
+  static String getChildKey(int year, int week, {DateTime date, bool checkLastMonth = true}) {
+    if (year == null)
       year = currentYear();
-    if (week == null) 
+    if (week == null)
       week = dayOfWeek();
+    if (date == null)
+      date = DateTime.now();
+    if(week > 51 && date.toUtc().month == DateTime.january && checkLastMonth)
+      year--;
+
     return year.toString() + "-" + week.toString();
   }
 

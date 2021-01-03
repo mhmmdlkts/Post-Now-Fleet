@@ -20,7 +20,6 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
