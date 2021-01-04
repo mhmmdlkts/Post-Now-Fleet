@@ -84,6 +84,21 @@
     "PHONE": "Phone Number",
     "EMAIL": "Email Adress"
   },
+  "REGISTER_NEW_DRIVERS_SCREEN": {
+    "TITLE": "Register New Deliverer",
+    "NAME": "Name",
+    "SURNAME": "Surname",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "PROFILE_PHOTO": "Profile Photo",
+    "IDENTIFY_CARD_FRONT": "Identify Card Front",
+    "IDENTIFY_CARD_BACK": "Identify Card Back",
+    "CRIMINAL_RECORD": "Criminal Record",
+    "REGISTER_DRIVER": "Register Driver",
+    "ERROR": {
+      "REGISTERING": "Error while registering"
+    }
+  },
   "MAIN_SCREEN": {
     "TABS": {
       "DRIVERS": {

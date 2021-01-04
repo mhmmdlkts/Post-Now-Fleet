@@ -44,7 +44,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Register New Driver"),
+        title: Text("REGISTER_NEW_DRIVERS_SCREEN".tr()),
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
@@ -61,8 +61,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.person),
-                hintText: "Name",
-                labelText: "Name",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.NAME".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.NAME".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -75,8 +75,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.person),
-                hintText: "Surname",
-                labelText: "Surname",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.SURNAME".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.SURNAME".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -88,8 +88,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.email),
-                hintText: "Email",
-                labelText: "Email",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.EMAIL".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.EMAIL".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -101,8 +101,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.phone),
-                hintText: "Phone",
-                labelText: "Phone",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.PHONE".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.PHONE".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -133,8 +133,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.image),
-                hintText: "Vesikalik",
-                labelText: "Vesikalik",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.PROFILE_PHOTO".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.PROFILE_PHOTO".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -159,8 +159,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
-                hintText: "Sabika kaydi",
-                labelText: "Sabika kaydi",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.CRIMINAL_RECORD".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.CRIMINAL_RECORD".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -185,8 +185,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
-                hintText: "Kimlik Ön",
-                labelText: "Kimlik Ön",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_FRONT".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_FRONT".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -211,8 +211,8 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
-                hintText: "Kimlik Arka",
-                labelText: "Kimlik Arka",
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_BACK".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_BACK".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -238,7 +238,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 ).then((value) async {
                   if (value == null) {
                     setState(() {
-                      _errorMessage = "Kayit sirasinda hata cikti.";
+                      _errorMessage = "REGISTER_NEW_DRIVERS_SCREEN.ERROR.REGISTERING".tr();
                       _isButtonActive = false;
                     });
                     return;
@@ -248,7 +248,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
               },
               margin: 0,
               padding: 15,
-              text: "Register Driver",
+              text: "REGISTER_NEW_DRIVERS_SCREEN.REGISTER_DRIVER".tr(),
             ),
             Container(height: 10,),
             Text(_errorMessage, style: TextStyle(color: Colors.red, fontSize: 24), textAlign: TextAlign.center,)
@@ -258,14 +258,14 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
     );
   }
 
-  bool _isFormCompleted() {
+  bool _isFormCompleted({bool areDocsRequired = false}) {
     if (!_isButtonActive) {
       _isButtonActive = true;
       return false;
     }
-    return _identityCardFrontController.text.isNotEmpty &&
-      _identityCardBackController.text.isNotEmpty &&
-      _criminalRecordController.text.isNotEmpty &&
+    return (_identityCardFrontController.text.isNotEmpty || !areDocsRequired) &&
+      (_identityCardBackController.text.isNotEmpty || !areDocsRequired) &&
+      (_criminalRecordController.text.isNotEmpty || !areDocsRequired) &&
       _surnameController.text.isNotEmpty &&
       _emailController.text.isNotEmpty &&
       _phoneController.text.isNotEmpty;
