@@ -1,205 +1,221 @@
 {
   "APP_NAME": "Post Now Fleet",
   "OK": "OK",
-  "NO": "No",
-  "YES": "Yes",
-  "CANCEL": "Cancel",
-  "ACCEPT": "Accept",
-  "WARNING": "Attention",
-  "CLOSE": "Close",
-  "ERROR": "Error",
-  "FAILED": "Failed",
-  "SETTINGS": "Settings",
-  "THANKS": "Thanks",
-  "SEND_MESSAGE": "Send a message",
-  "PLEASE_WAIT": "Please wait",
+  "NO": "Hayır",
+  "YES": "Evet",
+  "CANCEL": "İptal et",
+  "ACCEPT": "Kabul et",
+  "WARNING": "Uyarı",
+  "CLOSE": "Kapat",
+  "ERROR": "Hata",
+  "FAILED": "Başarısız",
+  "SETTINGS": "Ayarlar",
+  "THANKS": "Teşekkürler",
+  "SEND_MESSAGE": "Mesaj Gönder",
+  "PLEASE_WAIT": "Lütfen Bekleyin",
   "LOGIN": {
-    "TITLE": "Welcome Back",
-    "SUBTITLE": "Hello there, sign in to continue!",
-    "EMAIL_FIELD_TITLE": "Email",
-    "EMAIL_FIELD_HINT": "Your email",
-    "EMAIL_FIELD_VALIDATOR_ENTER_NAME": "Please enter your email address.",
-    "PASSWORD_FIELD_TITLE": "Password",
-    "PASSWORD_FIELD_HINT": "Your Password",
-    "PASSWORD_FIELD_VALIDATOR_ENTER_NAME": "Please enter your password.",
-    "AGREE_TERMS_AND_POLICY": "By signing in, you agree to our Privacy Policy and Privacy Policy and Terms & Conditions",
-    "CONTINUE_BUTTON": "Sign In",
-    "DON'T_HAVE_AN_ACCOUNT": "Don't have an account?",
-    "SIGN_IN": "Sign in",
-    "SIGN_UP": "Sign up",
-    "LOGIN_PROBLEMS": "Having trouble signing in?",
-    "AUTO_FILL_EMAIL_SUBJECT": "I'm having trouble signing in to Post Now Driver App",
+    "TITLE": "Hoşgeldiniz",
+    "SUBTITLE": "Merhaba, devam etmek için giriş yapınız.",
+    "EMAIL_FIELD_TITLE": "E-posta adresi",
+    "EMAIL_FIELD_HINT": "E-posta adresiniz",
+    "EMAIL_FIELD_VALIDATOR_ENTER_NAME": "Lütfen E-posta adresinizi girin.",
+    "PASSWORD_FIELD_TITLE": "Şifre",
+    "PASSWORD_FIELD_HINT": "Şifreniz",
+    "PASSWORD_FIELD_VALIDATOR_ENTER_NAME": "Lütfen şifrenizi girin.",
+    "AGREE_TERMS_AND_POLICY": "Oturum açarak, Gizlilik Politikamızı, Şartlar ve Koşullarımızı kabul etmiş olursunuz.",
+    "CONTINUE_BUTTON": "Oturum Açın",
+    "DON'T_HAVE_AN_ACCOUNT": "Hesabınız yok mu?",
+    "SIGN_IN": "Oturum aç",
+    "SIGN_UP": "Kaydol",
+    "LOGIN_PROBLEMS": "Oturum açmada sorun mu yaşıyorsunuz?",
+    "AUTO_FILL_EMAIL_SUBJECT": "Post Now Delivery uygulamasında oturum açarken sorun yaşıyorum.",
     "ERROR_MESSAGES" : {
-      "ERROR_INVALID_EMAIL": "Your email address seems to be invalid.",
-      "ERROR_WRONG_PASSWORD": "The password you entered is incorrect.",
-      "ERROR_USER_NOT_FOUND": "A user with this email address does not exist.",
-      "ERROR_USER_DISABLED": "The user with this email address has been deactivated.",
-      "ERROR_TOO_MANY_REQUESTS" : "Too many requests, try again later.",
-      "ERROR_OPERATION_NOT_ALLOWED" : "Signing in with email and password is not enabled.",
-      "ERROR_EMAIL_ALREADY_IN_USE": "This email address is already in use."
+      "ERROR_INVALID_EMAIL" : "E-posta adresiniz geçersiz.",
+      "ERROR_WRONG_PASSWORD" : "Girdiğiniz şifre yanlış.",
+      "ERROR_USER_NOT_FOUND" : "Bu e-posta adresiyle kayıtlı bir kullanıcı bulunmuyor.",
+      "ERROR_USER_DISABLED" : "Bu e-posta adresiyle kayıtlı kullanıcı devre dışı bırakıldı.",
+      "ERROR_TOO_MANY_REQUESTS" : "Çok fazla istek var, daha sonra tekrar deneyin.**",
+      "ERROR_OPERATION_NOT_ALLOWED" : "E-posta ve şifre ile oturum açma etkinleştirilmedi.",
+      "ERROR_EMAIL_ALREADY_IN_USE" : "Bu e-posta adresi zaten kullanılıyor."
     }
   },
   "MONTHS": {
-    "JANUARY": "January",
-    "FEBRUARY": "February",
-    "MARCH": "March",
-    "APRIL": "April",
-    "MAY": "May",
-    "JUNE": "June",
-    "JULY": "July",
-    "AUGUST": "August",
-    "SEPTEMBER": "September",
-    "OCTOBER": "October",
-    "NOVEMBER": "November",
-    "DECEMBER": "December"
+    "JANUARY": "Ocak",
+    "FEBRUARY": "Şubat",
+    "MARCH": "Mart",
+    "APRIL": "Nisan",
+    "MAY": "Mayıs",
+    "JUNE": "Hayiran",
+    "JULY": "Temmuz",
+    "AUGUST": "Auğustos",
+    "SEPTEMBER": "Eylül",
+    "OCTOBER": "Ekim",
+    "NOVEMBER": "Kasım",
+    "DECEMBER": "Aralık"
   },
   "CONTACT_FORM": {
-    "TITLE": "Contact Form",
+    "TITLE": "İletişim Formu",
     "NAME": {
-      "LABEL": "Name",
-      "HINT_LABEL": "Please enter your name."
+      "LABEL": "İsim",
+      "HINT_LABEL": "İsminizi girin."
     },
     "EMAIL": {
-      "LABEL": "Email",
-      "HINT_LABEL": "Please enter your email address."
+      "LABEL": "E-posta",
+      "HINT_LABEL": "E-posta adresinizi girin."
     },
     "PHONE": {
-      "LABEL": "Telephone number",
-      "HINT_LABEL": "Please enter your phone number."
+      "LABEL": "Telefon Numarası",
+      "HINT_LABEL": "Telefon numaranızı girin."
     },
     "SUBJECT": {
-      "LABEL": "Subject",
-      "HINT_LABEL": "Please enter a subject."
+      "LABEL": "Konu",
+      "HINT_LABEL": "Lütfen bir konu girin."
     },
     "CONTENT": {
-      "LABEL": "Content",
-      "HINT_LABEL": "Enter a content"
+      "LABEL": "İçerik",
+      "HINT_LABEL": "İçeriğinizi yazın."
     },
-    "SEND": "Send"
+    "SEND": "Gönder"
   },
   "EDIT_DRIVER_SCREEN": {
-    "IS_ACTIVE": "Is activate",
-    "ACTIVATE": "Activate",
-    "DEACTIVATE": "Deactivate",
-    "PHONE": "Phone",
-    "EMAIL": "Email"
+    "IS_ACTIVE": "Aktif",
+    "ACTIVATE": "Aktif et",
+    "DEACTIVATE": "Devre dışı bırak",
+    "PHONE": "Telefon Numarası",
+    "EMAIL": "E-posta Adresi"
+  },
+  "REGISTER_NEW_DRIVERS_SCREEN": {
+    "TITLE": "Yeni Dağıtıcı Kaydet",
+    "NAME": "İsim",
+    "SURNAME": "Soyisim",
+    "EMAIL": "E-posta adresi",
+    "PHONE": "Telefon Numarası",
+    "PROFILE_PHOTO": "Profil Resmi",
+    "IDENTIFY_CARD_FRONT": "Kimliğin ön kısmı",
+    "IDENTIFY_CARD_BACK": "Kimliğin arka kısmı veya oturum izni",
+    "REGISTRATION_SLIP": "İkametgah Belgesi",
+    "CRIMINAL_RECORD": "Sabıka Kaydı",
+    "REGISTER_DRIVER": "Dağıtıcıyı Kaydet",
+    "ERROR": {
+      "REGISTERING": "Kayıt esnasında hata oluştu."
+    }
   },
   "MAIN_SCREEN": {
     "TABS": {
       "DRIVERS": {
-        "REGISTER_DRIVERS": "Register New Driver"
+        "REGISTER_DRIVERS": "Yeni Dağıtıcı Kaydet"
       },
       "MAPS": {
 
       },
       "STATISTICS": {
-        "TH_WEEK": "{week}. Week",
-        "CANCEL_RATE": "Cancel Rate",
-        "TOTAL_TRIP_COUNT": "Total number of trips",
-        "TOTAL_WORKED_DRIVER_COUNT": "Total worked drivers",
-        "TOTAL_ONLINE_TIME": "Online time (max {max})",
+        "TH_WEEK": "{week}. Hafta",
+        "CANCEL_RATE": "İptal etme oranı",
+        "TOTAL_TRIP_COUNT": "Yapılan toplam iş sayısı",
+        "TOTAL_WORKED_DRIVER_COUNT": "Çalışmıs olan Dağıtıcılar",
+        "TOTAL_ONLINE_TIME": "Çevrim içi olma süresi (max {max})",
         "NET_INCOME": "Netto-Fahrpreis",
-        "INCOME_PRO_JOB": "Pro Fahrt",
-        "INCOME_PRO_HOUR": "Pro Stunde bei Fahrt",
-        "TOTAL_DRIVE_TIME": "Total travel time"
+        "INCOME_PRO_JOB": "İş başına",
+        "INCOME_PRO_HOUR": "Saat başı ortalaması",
+        "TOTAL_DRIVE_TIME": "Toplam çalışma süresi"
       }
     }
   },
   "LEGAL": {
-    "TITLE": "Legal",
+    "TITLE": "Yasal",
     "LegalTyp": {
-      "PRIVACY_POLICY": "Privacy Policy",
-      "SOFTWARE_LICENCES": "Software Licences",
-      "CONTACT": "Contact"
+      "PRIVACY_POLICY": "Gizlilik Politikası",
+      "SOFTWARE_LICENCES": "Yazılım Lisansları",
+      "CONTACT": "İletişim"
     }
   },
   "SETTINGS_SCREEN": {
     "ACCOUNT": {
-      "TITLE": "Account",
-      "NAME_HINT": "Name",
-      "PHONE_HINT": "Phone",
-      "EMAIL_HINT": "Email"
+      "TITLE": "Kullanıcı Hesabı",
+      "NAME_HINT": "İsim",
+      "PHONE_HINT": "Telefon Numarası",
+      "EMAIL_HINT": "E-posta Adresi"
     },
-    "SOFTWARE_LICENCES": "Licence",
-    "SIGN_OUT": "Logout"
+    "SOFTWARE_LICENCES": "Lisanslar",
+    "SIGN_OUT": "Oturum Kapat"
   },
   "OVERVIEW": {
-    "TH_WEEK": "{week}. Week",
+    "TH_WEEK": "{week}. Hafta",
     "SINGLE_ITEM": {
-      "DRIVER_CANCELED": "The deliverer has canceled.",
-      "CUSTOMER_CANCELED": "The customer has canceled."
+      "DRIVER_CANCELED": "Dağıtıcı iptal etti.",
+      "CUSTOMER_CANCELED": "Müşteri iptal etti."
     },
     "MODELS": {
-      "ORDER_DATE": "Order Date",
-      "ORDER_TIME": "Order Time",
+      "ORDER_DATE": "Sipariş tarihi",
+      "ORDER_TIME": "Sipariş saati",
       "JOB": {
-        "WAITING": "Waiting for Deliverer.",
-        "ON_ROAD": "The Deliverer has accepted your order.",
-        "PACKAGE_PICKED": "The Deliverer has picked up the order.",
-        "FINISHED": "Your order has been delivered.",
-        "CANCELED": "Order was canceled.",
-        "DRIVER_CANCELED": "The deliverer has canceled.",
-        "CUSTOMER_CANCELED": "The customer has canceled."
+        "WAITING": "Dağıtıcı bekleniyor.",
+        "ON_ROAD": "Dağıtıcı siparişinizi kabul etti.",
+        "PACKAGE_PICKED": "Dağıtıcı siparişinizi teslim aldı.",
+        "FINISHED": "Sipairşiniz teslim edildi.",
+        "CANCELED": "Sipariş iptal edildi.",
+        "DRIVER_CANCELED": "Dağıtıcı iptal etti.",
+        "CUSTOMER_CANCELED": "Müşteri iptal etti."
       }
     }
   },
   "MODELS": {
     "JOB": {
-      "WAITING": "Waiting for Deliverer.",
-      "ON_ROAD": "The Deliverer has accepted your order.",
-      "PACKAGE_PICKED": "The Deliverer has picked up the order.",
-      "FINISHED": "Your order has been delivered.",
-      "CANCELED": "Order was canceled.",
-      "DRIVER_CANCELED": "The deliverer has canceled.",
-      "CUSTOMER_CANCELED": "The customer has canceled."
+      "WAITING": "Dağıtıcı bekleniyor.",
+      "ON_ROAD": "Dağıtıcı siparişinizi kabul etti.",
+      "PACKAGE_PICKED": "Dağıtıcı siparişinizi teslim aldı.",
+      "FINISHED": "Sipairşiniz teslim edildi.",
+      "CANCELED": "Sipariş iptal edildi.",
+      "DRIVER_CANCELED": "Dağıtıcı iptal etti.",
+      "CUSTOMER_CANCELED": "Müşteri iptal etti."
     }
   },
   "ENUMS": {
     "DAYS": {
-      "MONDAY": "Monday",
-      "TUESDAY": "Tuesday",
-      "WEDNESDAY": "Wednesday",
-      "THURSDAY": "Thursday",
-      "FRIDAY": "Friday",
-      "SATURDAY": "Saturday",
-      "SUNDAY": "Sunday"
+      "MONDAY": "Pazartesi",
+      "TUESDAY": "Salı",
+      "WEDNESDAY": "Çarşamba",
+      "THURSDAY": "Perşembe",
+      "FRIDAY": "Cuma",
+      "SATURDAY": "Cumartesi",
+      "SUNDAY": "Pazar"
     }
   },
   "DIALOGS": {
     "PERMISSIONTYPENUM": {
       "CAMERA": {
-        "TITLE": "Allow Post Now Driver to take pictures.",
-        "MESSAGE": "Post Now needs to access your camera.",
-        "ALLOW": "Allow"
+        "TITLE": "Post Now Delivery'nin fotoğraf çekmesine izin ver.",
+        "MESSAGE": "Post Now Delivery'nin kameranıza erişmesi gerekiyor.",
+        "ALLOW": "İzin ver"
       },
       "LOCATION": {
-        "TITLE": "Allow Post Now Driver to access this device's location.",
-        "MESSAGE": "In order to guarantee a better function, give the app the authorization to access the device's location.",
-        "ALLOW": "Allow"
+        "TITLE": "Post Now Delivery'nin bu cihazın konumuna erişmesine izin verin.",
+        "MESSAGE": "Uygulamanın daha iyi çalışabilmesi için, uygulamaya cihazın konumuna erişme yetkisi verin.",
+        "ALLOW": "İzin ver"
       }
     },
     "I_AM_BACK": {
-      "TITLE": "Are you back?",
+      "TITLE": "Döndün mü?",
       "MESSAGE": "",
-      "POSITIVE": "Yes"
+      "POSITIVE": "Evet"
     },
     "UPDATE_AVAILABLE": {
-      "TITLE": "New update available.",
-      "BODY": "The latest update must be installed to use the app.",
-      "BUTTON": "Update Now!"
+      "TITLE": "Yeni güncelleme mevcut.",
+      "BODY": "Uygulamayı kullanmak için en son güncellemenin yüklenmesi gerekir.",
+      "BUTTON": "Şimdi Güncelle!"
     },
     "NO_ACCOUNT": {
-      "TITLE": "Wtf are you doing here?",
-      "BODY": "Bu uygulamayi kullanmaya yetkin yok.",
-      "BUTTON": "Close"
+      "TITLE": "Uyarı!",
+      "BODY": "Bu uygulamayı kullanma yetkiniz yok.",
+      "BUTTON": "Kapat"
     },
     "JOB_SETTINGS": {
-      "CANCEL_JOB" : "Cancel order."
+      "CANCEL_JOB" : "Siparişi iptal et."
     },
     "SETTINGS": {
       "YOU_CANT_CHANGE": {
-        "MESSAGE": "If you want to change your datas, contact us.",
-        "CONTACT": "Contact us"
+        "MESSAGE": "Verilerinizi değiştirmek isterseniz bizimle iletişime geçin.",
+        "CONTACT": "Bize ulaşın."
       }
     }
   }

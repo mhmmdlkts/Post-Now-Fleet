@@ -88,13 +88,14 @@
     "TITLE": "Register New Deliverer",
     "NAME": "Name",
     "SURNAME": "Surname",
-    "EMAIL": "Email",
-    "PHONE": "Phone",
+    "EMAIL": "Email Adress",
+    "PHONE": "Phone Number",
     "PROFILE_PHOTO": "Profile Photo",
-    "IDENTIFY_CARD_FRONT": "Identify Card Front",
-    "IDENTIFY_CARD_BACK": "Identify Card Back",
+    "IDENTIFY_CARD_FRONT": "Identify Card from front",
+    "IDENTIFY_CARD_BACK": "Identity card from behind or residence permit",
+    "REGISTRATION_SLIP": "Registration Slip",
     "CRIMINAL_RECORD": "Criminal Record",
-    "REGISTER_DRIVER": "Register Driver",
+    "REGISTER_DRIVER": "Register Deliverer",
     "ERROR": {
       "REGISTERING": "Error while registering"
     }

@@ -84,6 +84,22 @@
     "PHONE": "Telefonnummer",
     "EMAIL": "E-mail Adresse"
   },
+  "REGISTER_NEW_DRIVERS_SCREEN": {
+    "TITLE": "Neuen Zusteller Registrieren",
+    "NAME": "Name",
+    "SURNAME": "Nachname",
+    "EMAIL": "E-mail Adresse",
+    "PHONE": "Telefonnummer",
+    "PROFILE_PHOTO": "Profilbild",
+    "IDENTIFY_CARD_FRONT": "Personalausweis von vorne",
+    "IDENTIFY_CARD_BACK": "Personalausweis von hinten oder Aufenthaltstitel",
+    "REGISTRATION_SLIP": "Meldezettel",
+    "CRIMINAL_RECORD": "Strafregisterauszug",
+    "REGISTER_DRIVER": "Zusteller registrieren",
+    "ERROR": {
+      "REGISTERING": "Fehler bei der Registrierung"
+    }
+  },
   "MAIN_SCREEN": {
     "TABS": {
       "DRIVERS": {
