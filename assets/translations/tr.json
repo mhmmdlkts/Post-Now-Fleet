@@ -92,7 +92,8 @@
     "PHONE": "Telefon Numarası",
     "PROFILE_PHOTO": "Profil Resmi",
     "IDENTIFY_CARD_FRONT": "Kimliğin ön kısmı",
-    "IDENTIFY_CARD_BACK": "Kimliğin arka kısmı veya oturum izni",
+    "IDENTIFY_CARD_BACK": "Kimliğin arka kısmı",
+    "RESIDENCE_PERMIT": "Oturum izni",
     "REGISTRATION_SLIP": "İkametgah Belgesi",
     "CRIMINAL_RECORD": "Sabıka Kaydı",
     "REGISTER_DRIVER": "Dağıtıcıyı Kaydet",
@@ -119,6 +120,13 @@
         "INCOME_PRO_HOUR": "Saat başı ortalaması",
         "TOTAL_DRIVE_TIME": "Toplam çalışma süresi"
       }
+    },
+    "SIDE_MENU": {
+      "OVERVIEW": "Sipariş Geçmişi",
+      "PRIVACY_POLICY": "Gizlilik Politikası",
+      "SOFTWARE_LICENCES": "Yazılım Lisansları",
+      "CONTACT": "İletişim",
+      "SIGN_OUT": "Oturumu kapat"
     }
   },
   "LEGAL": {

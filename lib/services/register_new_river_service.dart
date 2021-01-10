@@ -19,6 +19,8 @@ class RegisterNewDriverService {
     File criminalRecord,
     File identityCardFront,
     File identityCardBack,
+    File _residencePermit,
+    File _registrationSlip,
   ) async {
     Driver newDriver = Driver(fleetId: fleetId, name: name, surname: surname, email: email, phone: phone);
 
@@ -39,6 +41,8 @@ class RegisterNewDriverService {
       _startUpload(criminalRecord, result["key"], 'criminal_record');
       _startUpload(identityCardFront, result["key"], 'identity_card_front');
       _startUpload(identityCardBack, result["key"], 'identity_card_back');
+      _startUpload(_residencePermit, result["key"], 'residence_permit');
+      _startUpload(_registrationSlip, result["key"], 'register_slip');
     } catch (e) {
       print(e);
     }

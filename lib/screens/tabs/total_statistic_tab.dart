@@ -114,18 +114,13 @@ class _TotalStatisticTabState extends State<TotalStatisticTab> {
   int _getPageIndex() => _maxPage + _lastWeek - int.parse(_shownDate.split("-").last);
   int _pageToReadable(int page) => _lastWeek + 1 + page - _maxPage;
 
-  int _pageToYear(page) {
-    final a = OverviewService.currentYear() + ((page-1)/(proYearWeekCount)).floor();
-    return a;
-  }
+  int _pageToYear(page) => OverviewService.currentYear() + ((page-1)/(proYearWeekCount)).floor();
 
   int _pageToWeek(page) {
     int year = _pageToYear(page);
-    int a = page;
-    for (int i = OverviewService.currentYear()-1; i >= year; i--) {
-      a += OverviewService.getYearsWeekCount(i);
-    }
-    return a;
+    for (int i = OverviewService.currentYear()-1; i >= year; i--)
+      page += OverviewService.getYearsWeekCount(i);
+    return page;
   }
 
   Widget getInfoCard(String val, String explain, {VoidCallback onTap}) => Flexible(

@@ -92,7 +92,8 @@
     "PHONE": "Telefonnummer",
     "PROFILE_PHOTO": "Profilbild",
     "IDENTIFY_CARD_FRONT": "Personalausweis von vorne",
-    "IDENTIFY_CARD_BACK": "Personalausweis von hinten oder Aufenthaltstitel",
+    "IDENTIFY_CARD_BACK": "Personalausweis von hinten",
+    "RESIDENCE_PERMIT": "Aufenthaltstitel",
     "REGISTRATION_SLIP": "Meldezettel",
     "CRIMINAL_RECORD": "Strafregisterauszug",
     "REGISTER_DRIVER": "Zusteller registrieren",
@@ -119,6 +120,13 @@
         "INCOME_PRO_HOUR": "Pro Stunde bei Fahrt",
         "TOTAL_DRIVE_TIME": "Gesamtreisezeit"
       }
+    },
+    "SIDE_MENU": {
+      "OVERVIEW": "Auftragsverlauf",
+      "PRIVACY_POLICY": "Datenschutzerklärung",
+      "SOFTWARE_LICENCES": "Softwarelizenzen",
+      "CONTACT": "Kontakt",
+      "SIGN_OUT": "Abmelden"
     }
   },
   "LEGAL": {

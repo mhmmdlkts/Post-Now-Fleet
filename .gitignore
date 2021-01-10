@@ -43,7 +43,7 @@ app.*.map.json
 # Android Sign
 key.properties
 *.apk
-*.abb
+*.aab
 
 # Firebase
 google-services.json

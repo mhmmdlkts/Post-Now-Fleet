@@ -92,7 +92,8 @@
     "PHONE": "Phone Number",
     "PROFILE_PHOTO": "Profile Photo",
     "IDENTIFY_CARD_FRONT": "Identify Card from front",
-    "IDENTIFY_CARD_BACK": "Identity card from behind or residence permit",
+    "IDENTIFY_CARD_BACK": "Identity card from behind",
+    "RESIDENCE_PERMIT": "Residence permit",
     "REGISTRATION_SLIP": "Registration Slip",
     "CRIMINAL_RECORD": "Criminal Record",
     "REGISTER_DRIVER": "Register Deliverer",
@@ -121,10 +122,11 @@
       }
     },
     "SIDE_MENU": {
+      "OVERVIEW": "Order History",
       "PRIVACY_POLICY": "Privacy Policy",
-      "SOFTWARE_LICENCES": "Software Licenses",
+      "SOFTWARE_LICENCES": "Software Licences",
       "CONTACT": "Contact",
-      "SIGN_OUT": "Logout"
+      "SIGN_OUT": "Sign out"
     }
   },
   "CONTACT_FORM": {

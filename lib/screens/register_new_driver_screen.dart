@@ -26,10 +26,14 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
   TextEditingController _profilePhotoController = TextEditingController();
   TextEditingController _identityCardFrontController = TextEditingController();
   TextEditingController _identityCardBackController = TextEditingController();
+  TextEditingController _residencePermitBackController = TextEditingController();
+  TextEditingController _registrationSlipCardBackController = TextEditingController();
   File _profilePhoto;
   File _criminalRecord;
   File _identityCardFront;
   File _identityCardBack;
+  File _residencePermit;
+  File _registrationSlip;
 
   String _errorMessage = "";
   bool _isButtonActive = true;
@@ -44,7 +48,7 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("REGISTER_NEW_DRIVERS_SCREEN".tr()),
+        title: Text("REGISTER_NEW_DRIVERS_SCREEN.TITLE".tr()),
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
@@ -128,8 +132,6 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 });
               },
               readOnly: true,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.image),
@@ -154,8 +156,6 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 });
               },
               readOnly: true,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
@@ -180,8 +180,6 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 });
               },
               readOnly: true,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
@@ -206,13 +204,59 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                 });
               },
               readOnly: true,
-              textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 icon: Icon(Icons.insert_drive_file_rounded),
                 hintText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_BACK".tr(),
                 labelText: "REGISTER_NEW_DRIVERS_SCREEN.IDENTIFY_CARD_BACK".tr(),
+              ),
+              onChanged: (val) => setState((){
+              }),
+            ),
+            TextFormField(
+              controller: _residencePermitBackController,
+              onTap: () async {
+                FilePickerResult result = await FilePicker.platform.pickFiles(
+                  type: FileType.custom,
+                  allowedExtensions: ['pdf', 'png', 'jpeg', 'jpg'],
+                );
+                if (result == null)
+                  return;
+                _residencePermit = File(result.paths.first);
+                setState(() {
+                  _residencePermitBackController.text = result.names.first;
+                });
+              },
+              readOnly: true,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                icon: Icon(Icons.insert_drive_file_rounded),
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.RESIDENCE_PERMIT".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.RESIDENCE_PERMIT".tr(),
+              ),
+              onChanged: (val) => setState((){
+              }),
+            ),
+            TextFormField(
+              controller: _registrationSlipCardBackController,
+              onTap: () async {
+                FilePickerResult result = await FilePicker.platform.pickFiles(
+                  type: FileType.custom,
+                  allowedExtensions: ['pdf', 'png', 'jpeg', 'jpg'],
+                );
+                if (result == null)
+                  return;
+                _registrationSlip = File(result.paths.first);
+                setState(() {
+                  _registrationSlipCardBackController.text = result.names.first;
+                });
+              },
+              readOnly: true,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                icon: Icon(Icons.insert_drive_file_rounded),
+                hintText: "REGISTER_NEW_DRIVERS_SCREEN.REGISTRATION_SLIP".tr(),
+                labelText: "REGISTER_NEW_DRIVERS_SCREEN.REGISTRATION_SLIP".tr(),
               ),
               onChanged: (val) => setState((){
               }),
@@ -234,7 +278,9 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
                   _profilePhoto,
                   _criminalRecord,
                   _identityCardFront,
-                  _identityCardBack
+                  _identityCardBack,
+                  _residencePermit,
+                  _registrationSlip
                 ).then((value) async {
                   if (value == null) {
                     setState(() {
@@ -266,7 +312,11 @@ class _RegisterNewDriverScreenState extends State<RegisterNewDriverScreen> {
     return (_identityCardFrontController.text.isNotEmpty || !areDocsRequired) &&
       (_identityCardBackController.text.isNotEmpty || !areDocsRequired) &&
       (_criminalRecordController.text.isNotEmpty || !areDocsRequired) &&
+      (_residencePermitBackController.text.isNotEmpty || !areDocsRequired) &&
+      (_registrationSlipCardBackController.text.isNotEmpty || !areDocsRequired) &&
+      _profilePhotoController.text.isNotEmpty &&
       _surnameController.text.isNotEmpty &&
+      _nameController.text.isNotEmpty &&
       _emailController.text.isNotEmpty &&
       _phoneController.text.isNotEmpty;
   }
