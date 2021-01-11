@@ -198,7 +198,7 @@
       },
       "LOCATION": {
         "TITLE": "Zulassen, dass Post Now den Gerätestandort abruft?",
-        "MESSAGE": "Um eine bessere Funktion zu gewährleisten, gib der App die Berechtigung, auf den Gerätestandort zuzugreifen",
+        "MESSAGE": "Wenn der Zugriff für den Standort gewährt wird, können Sie Ihren aktuellen Standort und die Ihrer Zusteller in Ihrer Nähe überprüfen.",
         "ALLOW": "Zulassen"
       }
     },
