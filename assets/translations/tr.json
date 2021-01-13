@@ -198,7 +198,7 @@
       },
       "LOCATION": {
         "TITLE": "Post Now Delivery'nin bu cihazın konumuna erişmesine izin verin.",
-        "MESSAGE": "Uygulamanın daha iyi çalışabilmesi için, uygulamaya cihazın konumuna erişme yetkisi verin.",
+        "MESSAGE": "Konum için erişim verildiğinde, mevcut konumunuzu ve çevrenizdeki teslimatçıları gözden geçirebilirsiniz.",
         "ALLOW": "İzin ver"
       }
     },

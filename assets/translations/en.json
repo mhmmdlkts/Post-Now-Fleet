@@ -222,7 +222,7 @@
       },
       "LOCATION": {
         "TITLE": "Allow Post Now Driver to access this device's location.",
-        "MESSAGE": "In order to guarantee a better function, give the app the authorization to access the device's location.",
+        "MESSAGE": "When access given for location, you can review your current location and your deliverers' around you.",
         "ALLOW": "Allow"
       }
     },
