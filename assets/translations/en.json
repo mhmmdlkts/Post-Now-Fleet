@@ -224,6 +224,11 @@
         "TITLE": "Allow Post Now Driver to access this device's location.",
         "MESSAGE": "When access given for location, you can review your current location and your deliverers' around you.",
         "ALLOW": "Allow"
+      },
+      "NOTIFICATION": {
+        "TITLE": "This app would like to send you notifications",
+        "MESSAGE": "Notifications may include alerts sounds and icon badges.",
+        "ALLOW": "Allow"
       }
     },
     "I_AM_BACK": {

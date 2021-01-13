@@ -200,6 +200,11 @@
         "TITLE": "Zulassen, dass Post Now den Gerätestandort abruft?",
         "MESSAGE": "Wenn der Zugriff für den Standort gewährt wird, können Sie Ihren aktuellen Standort und die Ihrer Zusteller in Ihrer Nähe überprüfen.",
         "ALLOW": "Zulassen"
+      },
+      "NOTIFICATION": {
+        "TITLE": "Diese App möchte Ihnen Benachrichtigungen senden",
+        "MESSAGE": "Benachrichtigungen können Warntöne und Symbolabzeichen enthalten.",
+        "ALLOW": "Zulassen"
       }
     },
     "I_AM_BACK": {
