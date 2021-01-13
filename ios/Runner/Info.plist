@@ -6,69 +6,69 @@
 	<array>
 		<string>com.postnow.fleet</string>
 	</array>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>tr</string>
-		<string>de</string>
-		<string>en</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-    <key>NSContactsUsageDescription</key>
-    <string>This app needs access to contact to provide the best possible user experience</string>
-    <key>NSCalendarsUsageDescription</key>
-    <string>This app needs access to calender to provide the best possible user experience</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>This app needs access to Photo Library to provide the best possible user experience</string>
-    <key>NSAppleMusicUsageDescription</key>
-    <string>This app needs access to Media Library to provide the best possible user experience</string>
-    <key>NSMotionUsageDescription</key>
-    <string>This app needs access to Motion to provide the best possible user experience</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>This app needs access to Speech Recognite to provide the best possible user experience</string>
 	<key>CFBundleDisplayName</key>
 	<string>Post Now Fleet</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to location when in the background.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open and in the background.</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>tr</string>
+		<string>de</string>
+		<string>en</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>post_now_fleet</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app needs access to Media Library to provide the best possible user experience</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app needs access to calender to provide the best possible user experience</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app needs access to contact to provide the best possible user experience</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open and in the background.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app needs access to location when in the background.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>This app needs access to Motion to provide the best possible user experience</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to Photo Library to provide the best possible user experience</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app needs access to Speech Recognite to provide the best possible user experience</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

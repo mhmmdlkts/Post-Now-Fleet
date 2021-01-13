@@ -21,31 +21,38 @@ class _DriversListTabState extends State<DriversListTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
-        shrinkWrap: true,
-          children: [
-            CustomButton1(
-              onTap: () async  {
+      child: Stack(
+        children: [
+          ListView(
+              shrinkWrap: true,
+              children: [
+                ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: AllDriverService.allDrivers.length,
+                    itemBuilder: (_, i) => _singleDriverWidget(AllDriverService.allDrivers[i]),
+                    separatorBuilder: (_, i) => Divider(height: 0,)
+                )
+              ]
+          ),
+          Container(
+            alignment: Alignment.bottomRight,
+            margin: EdgeInsets.all(20),
+            child: FloatingActionButton(
+              onPressed: () async {
                 String newDriverKey = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RegisterNewDriverScreen(widget.myFleet)));
+                    MaterialPageRoute(builder: (context) => RegisterNewDriverScreen(widget.myFleet)));
                 if (newDriverKey == null)
                   return;
                 await AllDriverService.fetchAndAddDriver(newDriverKey);
                 setState(() {
                 });
               },
-              text: "MAIN_SCREEN.TABS.DRIVERS.REGISTER_DRIVERS".tr(),
-              icon: Icons.add
+              child: Icon(Icons.add, color: Colors.white,),
             ),
-            ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: AllDriverService.allDrivers.length,
-                itemBuilder: (_, i) => _singleDriverWidget(AllDriverService.allDrivers[i]),
-                separatorBuilder: (_, i) => Divider(height: 0,)
-            )
-          ]
-      ),
+          )
+        ],
+      )
     );
   }
 

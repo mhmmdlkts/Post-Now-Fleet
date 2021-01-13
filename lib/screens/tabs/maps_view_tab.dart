@@ -86,9 +86,9 @@ class _MapsViewTabState extends State<MapsViewTab> {
     _setMyPosition(position);
   }
 
-  Future<void> _initMyPosition() async {
-    if (await PermissionService.positionIsNotGranted(context, PermissionTypEnum.LOCATION))
-      return null;
+  Future<bool> _initMyPosition() async {
+    if (await PermissionService.positionIsNotGranted(PermissionTypEnum.LOCATION, context: context))
+      return false;
 
     const locationOptions = LocationOptions(accuracy: LocationAccuracy.high, distanceFilter: 10);
 
@@ -103,5 +103,6 @@ class _MapsViewTabState extends State<MapsViewTab> {
     await _mapController.moveCamera(CameraUpdate.newCameraPosition(
         CameraPosition(target: LatLng(_myPosition.latitude, _myPosition.longitude), zoom: 13)
     ));
+    return true;
   }
 }
