@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:post_now_fleet/decoration/my_colors.dart';
+import 'package:post_now_fleet/dialogs/custom_notification_dialog.dart';
+import 'package:post_now_fleet/models/custom_notification.dart';
 import 'package:post_now_fleet/models/fleet.dart';
 import 'package:post_now_fleet/screens/splash_screen.dart';
 import 'package:post_now_fleet/screens/tabs/drivers_list_tab.dart';
@@ -10,6 +12,7 @@ import 'package:post_now_fleet/screens/tabs/total_statistic_tab.dart';
 import 'package:post_now_fleet/services/all_driver_statistic_service.dart';
 import 'package:post_now_fleet/services/all_drivers_service.dart';
 import 'package:post_now_fleet/services/auth_service.dart';
+import 'package:post_now_fleet/services/notification_service.dart';
 import 'package:post_now_fleet/services/legal_service.dart';
 import 'package:post_now_fleet/services/main_screen_service.dart';
 import 'package:post_now_fleet/services/overview_service.dart';
@@ -58,6 +61,13 @@ class _MainScreenState extends State<MainScreen> {
       _driverLocationIconOnJob = BitmapDescriptor.fromBytes(value);
       _nextInitializeDone('4');
     })});
+
+    NotificationService.fetch(widget.user.uid).then((value) => {
+      NotificationService.notifications.forEach((element) async {
+        await _showCustomNotificationDialog(element);
+        await Future.delayed(Duration(milliseconds: 300));
+      })
+    });
 
     _initCount++;
     initializeDateFormatting().then((value) => {
@@ -190,4 +200,12 @@ class _MainScreenState extends State<MainScreen> {
     return Container();
   }
 
+  _showCustomNotificationDialog(CustomNotification customNotification) async {
+    await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomNotificationDialog(customNotification);
+        }
+    );
+  }
 }

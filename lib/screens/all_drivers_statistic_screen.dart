@@ -39,7 +39,21 @@ class _AllDriversStatisticScreenState extends State<AllDriversStatisticScreen> {
 
   Widget _getSingleDriverWidget(String driverKey) {
     final driverStatistics = AllDriversStatisticsService.statistics[widget.date][driverKey];
-    final Driver driver = AllDriverService.allDrivers.where((element) => element.key == driverKey).first;
+
+    // final Driver driver = AllDriverService.allDrivers.where((element) => element?.key == driverKey)?.first;
+    // TODO strange exception??
+
+    Driver driver;
+
+    AllDriverService.allDrivers.forEach((element) {
+      if(element.key == driverKey) {
+        driver = element;
+        return;
+      }
+    });
+
+    if (driver == null)
+      return Container();
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) => OneDriverStatisticScreen(widget.date, driver, driverStatistics)));
